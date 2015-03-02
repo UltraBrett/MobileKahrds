@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace MobileKahrds
 {
-	[Activity (Label = "MobileKahrds", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "My Mobile Kahrds", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;
