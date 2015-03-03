@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#D4E3FC"
     android:id="@+id/layoutContainer"
     android:orientation="horizontal">
     <RelativeLayout
@@ -23,16 +24,12 @@
                 android:layout_weight="0.20" />
             <Button
                 android:text="Games"
-                android:layout_width="fill_parent"
-                android:layout_height="0dip"
-                android:layout_weight="0.20"
-                android:layout_margin="10px" />
+                android:background="@drawable/main_button"
+                style="@style/main_button_text" />
             <Button
                 android:text="Settings"
-                android:layout_width="fill_parent"
-                android:layout_height="0dip"
-                android:layout_weight="0.20"
-                android:layout_margin="10px" />
+                android:background="@drawable/main_button"
+                style="@style/main_button_text" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
@@ -54,16 +51,12 @@
                 android:layout_weight="0.20" />
             <Button
                 android:text="My Kahrds"
-                android:layout_width="fill_parent"
-                android:layout_height="0dip"
-                android:layout_weight="0.20"
-                android:layout_margin="10px" />
+                android:background="@drawable/main_button"
+                style="@style/main_button_text" />
             <Button
                 android:text="About"
-                android:layout_width="fill_parent"
-                android:layout_height="0dip"
-                android:layout_weight="0.20"
-                android:layout_margin="10px" />
+                android:background="@drawable/main_button"
+                style="@style/main_button_text" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
