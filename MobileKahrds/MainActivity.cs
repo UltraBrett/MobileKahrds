@@ -19,7 +19,8 @@ namespace MobileKahrds
 
 		public static Spinner spinner;
 
-		public static EditText newSetField, newQuestionField, newAnswerField;
+		public static EditText newSetField, newQuestionField, newAnswerField,
+		editQuestionField, editAnswerField;
 
 
 		protected override void OnCreate (Bundle bundle)
@@ -34,6 +35,7 @@ namespace MobileKahrds
 		//controls everything forever
 		public void buttonInitializer(string page){
 			switch (page) {
+
 			case "mainMenu":
 				myKahrds = FindViewById<Button> (Resource.Id.myKahrds);
 
@@ -43,6 +45,7 @@ namespace MobileKahrds
 				};
 
 				break;
+
 			case "myKahrds":
 				mainMenu = FindViewById<Button> (Resource.Id.mainMenu);
 				createSet = FindViewById<Button> (Resource.Id.createSet);
@@ -61,6 +64,7 @@ namespace MobileKahrds
 					buttonInitializer("manageSet");
 				};
 				break;
+
 			case "createSet":
 				newSetField = FindViewById<EditText> (Resource.Id.newSetField);
 				//basically going to be manage set with an actual set variable
@@ -77,6 +81,7 @@ namespace MobileKahrds
 					buttonInitializer ("myKahrds");
 				};
 				break;
+
 			case "manageSet":
 				spinner = FindViewById<Spinner> (Resource.Id.spinner);
 				newQuestion = FindViewById<Button> (Resource.Id.newQuestion);
@@ -101,6 +106,7 @@ namespace MobileKahrds
 					buttonInitializer ("myKahrds");
 				};
 				break;
+
 			case "newQuestion":
 				newQuestionField = FindViewById<EditText> (Resource.Id.newQuestionField);
 				newAnswerField = FindViewById<EditText> (Resource.Id.newAnswerField);
@@ -117,6 +123,7 @@ namespace MobileKahrds
 					buttonInitializer ("manageSet");
 				};
 				break;
+
 			case "editQuestion":
 				spinner = FindViewById<Spinner> (Resource.Id.spinner);
 				editQuestion = FindViewById<Button> (Resource.Id.editQuestion);
@@ -131,13 +138,32 @@ namespace MobileKahrds
 					buttonInitializer ("manageSet");
 				};
 				break;
+
 			case "deleteQuestion":
+				spinner = FindViewById<Spinner> (Resource.Id.spinner);
+				deleteQuestion = FindViewById<Button> (Resource.Id.deleteQuestion);
+				manageSet = FindViewById<Button> (Resource.Id.manageSet);
+
+				manageSet.Click += delegate {
+					SetContentView (Resource.Layout.ManageSet);
+					buttonInitializer ("manageSet");
+				};
 				break;
-			case "saveQuestion":
-				break;
+
 			case "editSelectedQuestion":
-				break;
-			case "deleteSelectedQuestion":
+				editQuestionField = FindViewById<EditText> (Resource.Id.editQuestionField);
+				editAnswerField = FindViewById<EditText> (Resource.Id.editAnswerField);
+				saveQuestion = FindViewById<Button> (Resource.Id.saveQuestion);
+				editQuestion = FindViewById<Button> (Resource.Id.editQuestion);
+
+				saveQuestion.Click += delegate {
+					SetContentView (Resource.Layout.EditQuestion);
+					buttonInitializer("editQuestion");
+				};
+				editQuestion.Click += delegate {
+					SetContentView (Resource.Layout.EditQuestion);
+					buttonInitializer ("editQuestion");
+				};
 				break;
 			}
 		}

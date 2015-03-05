@@ -84,7 +84,6 @@
     <AndroidResource Include="Resources\layout\NewQuestion.axml" />
     <AndroidResource Include="Resources\layout\EditSelectedQuestion.axml" />
     <AndroidResource Include="Resources\layout\EditQuestion.axml" />
-    <AndroidResource Include="Resources\layout\DeleteSelectedQuestion.axml" />
     <AndroidResource Include="Resources\layout\DeleteQuestion.axml" />
     <AndroidResource Include="Resources\layout\CreateSet.axml" />
     <AndroidResource Include="Resources\Drawable\text_field.xml" />
