@@ -22,25 +22,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
                 android:layout_weight="0.06" />
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="select question"
+                style="@style/navigation_button_text" />
             <Button
-                android:text="Create Set"
-                android:id="@+id/createSet"
+                android:text="New Question"
+                android:id="@+id/newQuestion"
                 android:background="@drawable/buttons"
                 style="@style/navigation_button_text" />
             <Button
-                android:text="Manage Set"
-                android:id="@+id/manageSet"
+                android:text="Edit Question"
+                android:id="@+id/editQuestion"
                 android:background="@drawable/buttons"
                 style="@style/navigation_button_text" />
             <Button
-                android:text="Main Menu"
-                android:id="@+id/mainMenu"
+                android:text="Delete Question"
+                android:id="@+id/deleteQuestion"
+                android:background="@drawable/buttons"
+                style="@style/navigation_button_text" />
+            <Button
+                android:text="Return"
+                android:id="@+id/myKahrds"
                 android:background="@drawable/buttons"
                 style="@style/navigation_button_text" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
-                android:layout_weight="0.04" />
+                android:layout_weight="0.14" />
         </LinearLayout>
     </RelativeLayout>
     <RelativeLayout

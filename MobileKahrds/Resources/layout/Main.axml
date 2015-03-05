@@ -24,10 +24,12 @@
                 android:layout_weight="0.20" />
             <Button
                 android:text="Games"
+                android:id="@+id/games"
                 android:background="@drawable/buttons"
                 style="@style/main_button_text" />
             <Button
                 android:text="Settings"
+                android:id="@+id/settings"
                 android:background="@drawable/buttons"
                 style="@style/main_button_text" />
             <LinearLayout
@@ -56,6 +58,7 @@
                 style="@style/main_button_text" />
             <Button
                 android:text="About"
+                android:id="@+id/about"
                 android:background="@drawable/buttons"
                 style="@style/main_button_text" />
             <LinearLayout

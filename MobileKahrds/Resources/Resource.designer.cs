@@ -63,17 +63,44 @@ namespace MobileKahrds
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f060004
+			public const int about = 2131099652;
+			
+			// aapt resource value: 0x7f06000a
+			public const int createSet = 2131099658;
+			
+			// aapt resource value: 0x7f060009
+			public const int deleteQuestion = 2131099657;
+			
+			// aapt resource value: 0x7f060008
+			public const int editQuestion = 2131099656;
+			
+			// aapt resource value: 0x7f060001
+			public const int games = 2131099649;
+			
 			// aapt resource value: 0x7f060000
 			public const int layoutContainer = 2131099648;
 			
-			// aapt resource value: 0x7f060003
-			public const int mainMenu = 2131099651;
+			// aapt resource value: 0x7f06000c
+			public const int mainMenu = 2131099660;
 			
-			// aapt resource value: 0x7f060001
-			public const int myKahrds = 2131099649;
+			// aapt resource value: 0x7f06000b
+			public const int manageSet = 2131099659;
+			
+			// aapt resource value: 0x7f060003
+			public const int myKahrds = 2131099651;
+			
+			// aapt resource value: 0x7f060007
+			public const int newQuestion = 2131099655;
+			
+			// aapt resource value: 0x7f060005
+			public const int relativeLayout2 = 2131099653;
 			
 			// aapt resource value: 0x7f060002
-			public const int relativeLayout2 = 2131099650;
+			public const int settings = 2131099650;
+			
+			// aapt resource value: 0x7f060006
+			public const int spinner = 2131099654;
 			
 			static Id()
 			{
@@ -89,10 +116,34 @@ namespace MobileKahrds
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int CreateSet = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int MyKahrds = 2130903041;
+			public const int DeleteQuestion = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int DeleteSelectedQuestion = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int EditQuestion = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int EditSelectedQuestion = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int Main = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int ManageSet = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int MyKahrds = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int NewQuestion = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int NewSet = 2130903049;
 			
 			static Layout()
 			{
