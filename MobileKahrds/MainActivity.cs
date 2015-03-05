@@ -13,22 +13,41 @@ namespace MobileKahrds
 	public class MainActivity : Activity
 	{
 
+		public static Button myKahrds; 
+		public static Button mainMenu;
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
-
-			Button button = FindViewById<Button> (Resource.Id.myKahrds);
-			button.Click += delegate {
-				SetContentView (Resource.Layout.MyKahrds);
-			};
+			buttonInitializer ("mainMenu");
+					
 		}
-			
-			
-	}
 
+		public void buttonInitializer(string page){
+			switch (page) {
+			case "mainMenu":
+				myKahrds = FindViewById<Button> (Resource.Id.myKahrds);
+
+				myKahrds.Click += delegate {
+					SetContentView (Resource.Layout.MyKahrds);
+					buttonInitializer ("myKahrds");
+				};
+
+				break;
+			case "myKahrds":
+				mainMenu = FindViewById<Button> (Resource.Id.mainMenu);
+				mainMenu.Click += delegate {
+					SetContentView (Resource.Layout.Main);
+					buttonInitializer("mainMenu");
+				};
+				break;
+			default:
+				break;
+			}
+		}
+	}
 }
 
 

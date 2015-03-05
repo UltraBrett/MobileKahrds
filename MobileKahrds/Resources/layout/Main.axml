@@ -24,11 +24,11 @@
                 android:layout_weight="0.20" />
             <Button
                 android:text="Games"
-                android:background="@drawable/main_button"
+                android:background="@drawable/buttons"
                 style="@style/main_button_text" />
             <Button
                 android:text="Settings"
-                android:background="@drawable/main_button"
+                android:background="@drawable/buttons"
                 style="@style/main_button_text" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,13 +51,12 @@
                 android:layout_weight="0.20" />
             <Button
                 android:text="My Kahrds"
-                android:onClick="OpenMyKahrdsPage"
                 android:id="@+id/myKahrds"
-                android:background="@drawable/main_button"
+                android:background="@drawable/buttons"
                 style="@style/main_button_text" />
             <Button
                 android:text="About"
-                android:background="@drawable/main_button"
+                android:background="@drawable/buttons"
                 style="@style/main_button_text" />
             <LinearLayout
                 android:layout_width="match_parent"

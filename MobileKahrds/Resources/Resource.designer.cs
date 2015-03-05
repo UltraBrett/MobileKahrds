@@ -45,10 +45,10 @@ namespace MobileKahrds
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int buttons = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int main_button = 2130837505;
+			public const int Icon = 2130837505;
 			
 			static Drawable()
 			{
@@ -63,11 +63,11 @@ namespace MobileKahrds
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060003
-			public const int button1 = 2131099651;
-			
 			// aapt resource value: 0x7f060000
 			public const int layoutContainer = 2131099648;
+			
+			// aapt resource value: 0x7f060003
+			public const int mainMenu = 2131099651;
 			
 			// aapt resource value: 0x7f060001
 			public const int myKahrds = 2131099649;
@@ -128,6 +128,9 @@ namespace MobileKahrds
 			
 			// aapt resource value: 0x7f050000
 			public const int main_button_text = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int navigation_button_text = 2131034113;
 			
 			static Style()
 			{
