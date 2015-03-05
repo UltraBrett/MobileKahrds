@@ -19,6 +19,8 @@ namespace MobileKahrds
 
 		public static Spinner spinner;
 
+		public static EditText newSetField;
+
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -60,6 +62,20 @@ namespace MobileKahrds
 				};
 				break;
 			case "createSet":
+				newSetField = FindViewById<EditText> (Resource.Id.newSetField);
+				//basically going to be manage set with an actual set variable
+				//during the save
+				manageSet = FindViewById<Button> (Resource.Id.manageSet);
+				myKahrds = FindViewById<Button> (Resource.Id.myKahrds);
+
+				manageSet.Click += delegate {
+					SetContentView (Resource.Layout.ManageSet);
+					buttonInitializer("manageSet");
+				};
+				myKahrds.Click += delegate {
+					SetContentView (Resource.Layout.MyKahrds);
+					buttonInitializer ("myKahrds");
+				};
 				break;
 			case "manageSet":
 				spinner = FindViewById<Spinner> (Resource.Id.spinner);
@@ -84,8 +100,6 @@ namespace MobileKahrds
 					SetContentView (Resource.Layout.MyKahrds);
 					buttonInitializer ("myKahrds");
 				};
-				break;
-			case "newSet":
 				break;
 			case "newQuestion":
 				break;

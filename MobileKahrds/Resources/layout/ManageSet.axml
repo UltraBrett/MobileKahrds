@@ -24,9 +24,8 @@
                 android:layout_weight="0.06" />
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:text="select question"
+                android:background="@drawable/text_field"
                 style="@style/navigation_button_text" />
             <Button
                 android:text="New Question"

@@ -1,8 +1,54 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
+    android:background="#D4E3FC"
+    android:id="@+id/layoutContainer"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.10" />
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.80">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="0.06"
+                android:minWidth="25px"
+                android:minHeight="25px" />
+            <EditText
+                android:id="@+id/newSetField"
+                android:background="@drawable/text_field"
+                style="@style/text_field" />
+            <Button
+                android:text="Create Set"
+                android:id="@+id/manageSet"
+                android:background="@drawable/buttons"
+                style="@style/navigation_button_text" />
+            <Button
+                android:text="Back"
+                android:id="@+id/myKahrds"
+                android:background="@drawable/buttons"
+                style="@style/navigation_button_text" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="0.34" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.10"
+        android:id="@+id/relativeLayout2"
+        android:minWidth="25px"
+        android:minHeight="25px" />
 </LinearLayout>
-
