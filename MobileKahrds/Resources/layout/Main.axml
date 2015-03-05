@@ -51,6 +51,8 @@
                 android:layout_weight="0.20" />
             <Button
                 android:text="My Kahrds"
+                android:onClick="OpenMyKahrdsPage"
+                android:id="@+id/myKahrds"
                 android:background="@drawable/main_button"
                 style="@style/main_button_text" />
             <Button

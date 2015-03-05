@@ -12,7 +12,6 @@ namespace MobileKahrds
 	[Activity (Label = "My Mobile Kahrds", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -20,8 +19,16 @@ namespace MobileKahrds
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
+
+			Button button = FindViewById<Button> (Resource.Id.myKahrds);
+			button.Click += delegate {
+				SetContentView (Resource.Layout.MyKahrds);
+			};
 		}
+			
+			
 	}
+
 }
 
 
