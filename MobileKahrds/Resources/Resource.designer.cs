@@ -66,8 +66,8 @@ namespace MobileKahrds
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060007
-			public const int about = 2131099655;
+			// aapt resource value: 0x7f060009
+			public const int about = 2131099657;
 			
 			// aapt resource value: 0x7f06000c
 			public const int createSet = 2131099660;
@@ -75,11 +75,11 @@ namespace MobileKahrds
 			// aapt resource value: 0x7f06000b
 			public const int deleteQuestion = 2131099659;
 			
-			// aapt resource value: 0x7f06000a
-			public const int editQuestion = 2131099658;
+			// aapt resource value: 0x7f060006
+			public const int editQuestion = 2131099654;
 			
-			// aapt resource value: 0x7f060005
-			public const int games = 2131099653;
+			// aapt resource value: 0x7f060007
+			public const int games = 2131099655;
 			
 			// aapt resource value: 0x7f060000
 			public const int layoutContainer = 2131099648;
@@ -93,8 +93,14 @@ namespace MobileKahrds
 			// aapt resource value: 0x7f060003
 			public const int myKahrds = 2131099651;
 			
-			// aapt resource value: 0x7f060009
-			public const int newQuestion = 2131099657;
+			// aapt resource value: 0x7f06000f
+			public const int newAnswerField = 2131099663;
+			
+			// aapt resource value: 0x7f06000a
+			public const int newQuestion = 2131099658;
+			
+			// aapt resource value: 0x7f06000e
+			public const int newQuestionField = 2131099662;
 			
 			// aapt resource value: 0x7f060001
 			public const int newSetField = 2131099649;
@@ -102,11 +108,14 @@ namespace MobileKahrds
 			// aapt resource value: 0x7f060004
 			public const int relativeLayout2 = 2131099652;
 			
-			// aapt resource value: 0x7f060006
-			public const int settings = 2131099654;
+			// aapt resource value: 0x7f060010
+			public const int saveQuestion = 2131099664;
 			
 			// aapt resource value: 0x7f060008
-			public const int spinner = 2131099656;
+			public const int settings = 2131099656;
+			
+			// aapt resource value: 0x7f060005
+			public const int spinner = 2131099653;
 			
 			static Id()
 			{

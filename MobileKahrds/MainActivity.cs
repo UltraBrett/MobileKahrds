@@ -19,7 +19,7 @@ namespace MobileKahrds
 
 		public static Spinner spinner;
 
-		public static EditText newSetField;
+		public static EditText newSetField, newQuestionField, newAnswerField;
 
 
 		protected override void OnCreate (Bundle bundle)
@@ -102,8 +102,34 @@ namespace MobileKahrds
 				};
 				break;
 			case "newQuestion":
+				newQuestionField = FindViewById<EditText> (Resource.Id.newQuestionField);
+				newAnswerField = FindViewById<EditText> (Resource.Id.newAnswerField);
+				saveQuestion = FindViewById<Button> (Resource.Id.saveQuestion);
+				manageSet = FindViewById<Button> (Resource.Id.manageSet);
+
+				saveQuestion.Click += delegate {
+					//todo save question and answer field
+					SetContentView (Resource.Layout.ManageSet);
+					buttonInitializer("manageSet");
+				};
+				manageSet.Click += delegate {
+					SetContentView (Resource.Layout.ManageSet);
+					buttonInitializer ("manageSet");
+				};
 				break;
 			case "editQuestion":
+				spinner = FindViewById<Spinner> (Resource.Id.spinner);
+				editQuestion = FindViewById<Button> (Resource.Id.editQuestion);
+				manageSet = FindViewById<Button> (Resource.Id.manageSet);
+
+				editQuestion.Click += delegate {
+					SetContentView (Resource.Layout.EditSelectedQuestion);
+					buttonInitializer("editSelectedQuestion");
+				};
+				manageSet.Click += delegate {
+					SetContentView (Resource.Layout.ManageSet);
+					buttonInitializer ("manageSet");
+				};
 				break;
 			case "deleteQuestion":
 				break;
