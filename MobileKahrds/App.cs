@@ -10,7 +10,7 @@ namespace MobileKahrds
 
 		public App ()
 		{
-			var mainNav = new NavigationPage (new SetListPage ());
+			var mainNav = new NavigationPage (new MainPage ());
 
 			MainPage = mainNav;
 		}
