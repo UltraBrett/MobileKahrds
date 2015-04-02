@@ -1,11 +1,14 @@
 ﻿<Properties StartupItem="Droid\MobileKahrds.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus S (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\ITextToSpeech.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\Views\MyKahrdSetsPage.cs">
     <Files>
-      <File FileName="MobileKahrds\Views\SetListPage.cs" Line="67" Column="29" />
-      <File FileName="MobileKahrds\App.cs" Line="44" Column="29" />
-      <File FileName="MobileKahrds\ISQLite.cs" Line="12" Column="1" />
-      <File FileName="MobileKahrds\ITextToSpeech.cs" Line="9" Column="1" />
+      <File FileName="MobileKahrds\Views\SetListPage.cs" Line="19" Column="12" />
+      <File FileName="MobileKahrds\Views\SetItemPage.cs" Line="27" Column="48" />
+      <File FileName="MobileKahrds\Views\MyKahrdSetsPage.cs" Line="59" Column="4" />
+      <File FileName="MobileKahrds\Models\SetItem.cs" Line="13" Column="30" />
+      <File FileName="MobileKahrds\Views\CreateSetPage.cs" Line="20" Column="1" />
+      <File FileName="MobileKahrds\Data\SetItemDatabase.cs" Line="39" Column="76" />
+      <File FileName="MobileKahrds\Models\Sets.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
