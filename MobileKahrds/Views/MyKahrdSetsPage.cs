@@ -20,8 +20,6 @@ namespace MobileKahrds
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
 
-
-
 			var newSetButton = new Button { Text = "Create a new set" };
 			newSetButton.Clicked += (sender, e) => {
 				var setItem = new SetItem();
@@ -40,7 +38,7 @@ namespace MobileKahrds
 
 			};
 
-			var deleteQuestionButton = new Button { Text = "Edit an existing question" };
+			var deleteQuestionButton = new Button { Text = "Delete an existing question" };
 			deleteQuestionButton.Clicked += (sender, e) => {
 
 			};
