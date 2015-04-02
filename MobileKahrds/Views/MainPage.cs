@@ -20,7 +20,8 @@ namespace MobileKahrds
 
 			var kahrdsButton = new Button { Text = "My Kahrd Sets" };
 			kahrdsButton.Clicked += (sender, e) => {
-				
+				var page = new MyKahrdSetsPage();
+				Navigation.PushAsync(page);
 			};
 
 			var settingsButton = new Button { Text = "Settings" };
