@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileKahrds", "MobileKahrds\MobileKahrds.csproj", "{54CC8D47-5ACC-4766-BAF6-46DEC06FEE9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileKahrds", "MobileKahrds\MobileKahrds.csproj", "{E82AE14C-91F9-40CC-888C-B1414D65F822}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{9C512CD8-C672-4897-9B19-B28E646E589B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileKahrds.Droid", "Droid\MobileKahrds.Droid.csproj", "{53C1365A-9EED-4729-9F06-FA375384B984}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{54CC8D47-5ACC-4766-BAF6-46DEC06FEE9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54CC8D47-5ACC-4766-BAF6-46DEC06FEE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54CC8D47-5ACC-4766-BAF6-46DEC06FEE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54CC8D47-5ACC-4766-BAF6-46DEC06FEE9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C1365A-9EED-4729-9F06-FA375384B984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C1365A-9EED-4729-9F06-FA375384B984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C1365A-9EED-4729-9F06-FA375384B984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C1365A-9EED-4729-9F06-FA375384B984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E82AE14C-91F9-40CC-888C-B1414D65F822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82AE14C-91F9-40CC-888C-B1414D65F822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82AE14C-91F9-40CC-888C-B1414D65F822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82AE14C-91F9-40CC-888C-B1414D65F822}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{53C1365A-9EED-4729-9F06-FA375384B984} = {9C512CD8-C672-4897-9B19-B28E646E589B}
 	EndGlobalSection
 EndGlobal

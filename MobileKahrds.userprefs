@@ -1,1 +1,16 @@
-﻿<Properties StartupItem="MobileKahrds\MobileKahrds.csproj" />
+﻿<Properties StartupItem="Droid\MobileKahrds.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus S (KitKat)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\ITextToSpeech.cs">
+    <Files>
+      <File FileName="MobileKahrds\Views\SetListPage.cs" Line="67" Column="29" />
+      <File FileName="MobileKahrds\App.cs" Line="44" Column="29" />
+      <File FileName="MobileKahrds\ISQLite.cs" Line="12" Column="1" />
+      <File FileName="MobileKahrds\ITextToSpeech.cs" Line="9" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Targets.MobileKahrds.Droid AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>
