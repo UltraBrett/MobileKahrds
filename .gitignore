@@ -51,7 +51,6 @@ Temporary Items
 *.txt
 *.dex
 *.jar
-*.config
 *.userprefs
 MobileKahrds/obj/Debug/android/bin/resources_and_assemblies
 MobileKahrds/obj/Debug/MobileKahrds.csprojResolveAssemblyReference.cache
