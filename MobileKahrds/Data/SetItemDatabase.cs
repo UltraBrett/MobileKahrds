@@ -11,35 +11,13 @@ namespace MobileKahrds
 		static object locker = new object ();
 
 		SQLiteConnection database;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Tasky.DL.TaskDatabase"/> TaskDatabase. 
-		/// if the database doesn't exist, it will create the database and all the tables.
-		/// </summary>
-		/// <param name='path'>
-		/// Path.
-		/// </param>
 		public SetItemDatabase()
 		{
 			database = DependencyService.Get<ISQLite> ().GetConnection ();
 			// create the tables
 			database.CreateTable<SetItem>();
 		}
-
-		public IEnumerable<SetItem> GetItems ()
-		{
-			lock (locker) {
-				return (from i in database.Table<SetItem>() select i).ToList();
-			}
-		}
-
-		public IEnumerable<SetItem> GetItemsNotDone ()
-		{
-			lock (locker) {
-				return database.Query<SetItem>("SELECT * FROM [SetItem] WHERE [Done] = 0");
-			}
-		}
-
+			
 		public IEnumerable<SetItem> GetSetNames ()
 		{
 			lock (locker) {

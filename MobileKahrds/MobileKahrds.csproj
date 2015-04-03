@@ -35,7 +35,6 @@
     <Compile Include="App.cs" />
     <Compile Include="Data\SetItemDatabase.cs" />
     <Compile Include="Models\SetItem.cs" />
-    <Compile Include="ITextToSpeech.cs" />
     <Compile Include="Views\MainPage.cs" />
     <Compile Include="Views\MyKahrdSetsPage.cs" />
     <Compile Include="Views\CreateSetPage.cs" />
