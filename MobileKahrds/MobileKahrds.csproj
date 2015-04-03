@@ -57,16 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Toolkit.Content\ApplicationBar.Add.png" />
-    <None Include="Toolkit.Content\ApplicationBar.Cancel.png" />
-    <None Include="Toolkit.Content\ApplicationBar.Check.png" />
-    <None Include="Toolkit.Content\ApplicationBar.Delete.png" />
-    <None Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\" />
-    <Folder Include="Toolkit.Content\" />
   </ItemGroup>
 </Project>
