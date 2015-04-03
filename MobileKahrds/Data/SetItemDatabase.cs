@@ -47,6 +47,21 @@ namespace MobileKahrds
 			}
 		}
 
+		public IEnumerable<SetItem> GetSetItems (string setName)
+		{
+			lock (locker) {
+				return database.Query<SetItem>("SELECT * FROM [SetItem] WHERE [Set] = '" + setName + "' AND [Question] IS NOT NULL").ToArray();
+			}
+		}
+
+		public IEnumerable<SetItem> GetAnswer (string setName, string question)
+		{
+			lock (locker) {
+				return database.Query<SetItem>("SELECT [Answer] FROM [SetItem] WHERE [Set] = '" + setName
+					+ "' AND [Question] = '" + question + "'").ToArray();
+			}
+		}
+
 		public SetItem GetItem (int id) 
 		{
 			lock (locker) {
@@ -66,10 +81,11 @@ namespace MobileKahrds
 			}
 		}
 
-		public int DeleteItem(int id)
+		public void DeleteItem(string question, string setName)
 		{
 			lock (locker) {
-				return database.Delete<SetItem>(id);
+				database.Query<SetItem> ("DELETE FROM [SetItem] WHERE [Set] = '" + setName
+				+ "' AND [Question] = '" + question + "'");
 			}
 		}
 	}

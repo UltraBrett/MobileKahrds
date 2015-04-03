@@ -42,6 +42,8 @@
     <Compile Include="Views\MainPage.cs" />
     <Compile Include="Views\MyKahrdSetsPage.cs" />
     <Compile Include="Views\CreateSetPage.cs" />
+    <Compile Include="Views\SelectQuestionPage.cs" />
+    <Compile Include="Views\EditQuestionPage.cs" />
     <Compile Include="Views\NewQuestionPage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

@@ -41,7 +41,13 @@ namespace MobileKahrds
 
 			var editQuestionButton = new Button { Text = "Edit an existing question" };
 			editQuestionButton.Clicked += (sender, e) => {
-
+				if(picker.SelectedIndex >= 0){
+					var setItem = new SetItem();
+					setItem.Set = picker.Items[picker.SelectedIndex];
+					var setPage = new SelectQuestionPage();
+					setPage.BindingContext = setItem;
+					Navigation.PushAsync(setPage);
+				}
 			};
 
 			var deleteQuestionButton = new Button { Text = "Delete an existing question" };

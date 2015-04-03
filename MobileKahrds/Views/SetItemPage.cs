@@ -38,7 +38,6 @@ namespace MobileKahrds
 			var deleteButton = new Button { Text = "Delete" };
 			deleteButton.Clicked += (sender, e) => {
 				var todoItem = (SetItem)BindingContext;
-				App.Database.DeleteItem(todoItem.ID);
 				this.Navigation.PopAsync();
 			};
 
