@@ -50,18 +50,13 @@ namespace MobileKahrds
 				}
 			};
 
-			var deleteQuestionButton = new Button { Text = "Delete an existing question" };
-			deleteQuestionButton.Clicked += (sender, e) => {
-
-			};
-
 			Content = new StackLayout {
 				VerticalOptions = LayoutOptions.StartAndExpand,
 				Padding = new Thickness(20),
 				Children = {
 					picker,
 					newSetButton, newQuestionButton, 
-					editQuestionButton, deleteQuestionButton
+					editQuestionButton
 				}
 			};
 		}

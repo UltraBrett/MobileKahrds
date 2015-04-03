@@ -40,14 +40,7 @@ namespace MobileKahrds
 					Debug.WriteLine ("   rati = " + rati);
 					ResumeAtTodoId = int.Parse (rati);
 
-					if (ResumeAtTodoId >= 0) {
-						var todoPage = new SetItemPage ();
-						todoPage.BindingContext = Database.GetItem (ResumeAtTodoId);
 
-						MainPage.Navigation.PushAsync (
-							todoPage,
-							false); // no animation
-					}
 				}
 			}
 		}

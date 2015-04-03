@@ -37,14 +37,27 @@ namespace MobileKahrds
 					setPage.BindingContext = editSetItem;
 					Navigation.PushAsync(setPage);
 				}
-			};				
+			};	
+
+			var deleteQuestionButton = new Button { Text = "Delete Question" };
+			deleteQuestionButton.Clicked += (sender, e) => {
+				if(picker.SelectedIndex >= 0){
+					App.Database.DeleteItem(picker.Items[picker.SelectedIndex], setItem.Set);
+					picker.Items.Clear();
+					var questions = App.Database.GetSetItems(setItem.Set);
+					foreach (var q in questions) {
+						picker.Items.Add (q.Question);
+					}
+				}
+			};	
 
 			Content = new StackLayout {
 				VerticalOptions = LayoutOptions.StartAndExpand,
 				Padding = new Thickness(20),
 				Children = {
 					picker,
-					editQuestionButton
+					editQuestionButton,
+					deleteQuestionButton
 				}
 			};
 		}
