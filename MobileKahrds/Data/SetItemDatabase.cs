@@ -43,7 +43,7 @@ namespace MobileKahrds
 		public IEnumerable<SetItem> GetSetNames ()
 		{
 			lock (locker) {
-				return database.Query<SetItem>("SELECT [Set] FROM [SetItem] WHERE [Set] IS NOT NULL").ToArray();
+				return database.Query<SetItem>("SELECT DISTINCT [Set] FROM [SetItem] WHERE [Set] IS NOT NULL").ToArray();
 			}
 		}
 
