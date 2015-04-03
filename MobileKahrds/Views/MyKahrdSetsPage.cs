@@ -50,13 +50,25 @@ namespace MobileKahrds
 				}
 			};
 
+			var deleteSetButton = new Button { Text = "Delete selected set" };
+			deleteSetButton.Clicked += (sender, e) => {
+				if(picker.SelectedIndex >= 0){
+					App.Database.DeleteSet(picker.Items[picker.SelectedIndex]);
+					picker.Items.Clear();
+					var sets = App.Database.GetSetNames();
+					foreach (var s in sets) {
+						picker.Items.Add (s.Set);
+					}
+				}
+			};
+
 			Content = new StackLayout {
 				VerticalOptions = LayoutOptions.StartAndExpand,
 				Padding = new Thickness(20),
 				Children = {
 					picker,
 					newSetButton, newQuestionButton, 
-					editQuestionButton
+					editQuestionButton, deleteSetButton
 				}
 			};
 		}

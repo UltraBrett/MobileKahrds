@@ -66,6 +66,13 @@ namespace MobileKahrds
 				+ "' AND [Question] = '" + question + "'");
 			}
 		}
+
+		public void DeleteSet(string setName)
+		{
+			lock (locker) {
+				database.Query<SetItem> ("DELETE FROM [SetItem] WHERE [Set] = '" + setName + "'");
+			}
+		}
 	}
 }
 
