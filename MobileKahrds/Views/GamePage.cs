@@ -30,8 +30,14 @@ namespace MobileKahrds
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalOptions = LayoutOptions.End
 			};
-			//Play! button for each game page is set here
 
+			picker.Items.Clear();
+			var sets = App.Database.GetSetNames();
+			foreach (var s in sets) {
+				picker.Items.Add (s.Set);
+			}
+
+			//Play! button for each game page is set here
 			gamesButton.Clicked += (sender, e) => {
 				switch(game.Name){
 				case "Hangman":
