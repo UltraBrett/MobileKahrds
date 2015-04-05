@@ -41,7 +41,13 @@ namespace MobileKahrds
 			gamesButton.Clicked += (sender, e) => {
 				switch(game.Name){
 				case "Hangman":
-					Navigation.PushAsync(new GameSelectPage());
+					if(picker.SelectedIndex >= 0){
+						var setItem = new SetItem();
+						setItem.Set = picker.Items[picker.SelectedIndex];
+						var setPage = new HangmanPage();
+						setPage.BindingContext = setItem;
+						Navigation.PushAsync(setPage);
+					}
 					break;
 				case "?????":
 					Navigation.PushAsync(new MainPage());

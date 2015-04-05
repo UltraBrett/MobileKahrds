@@ -15,18 +15,9 @@ namespace MobileKahrds
 
 		public string termKey { private set; get; }
 		public string definitionValue { private set; get; }
-		static HashSet<char> hiddenChars;
-		static HashSet<char> guessedChars;	
+		public HashSet<char> hiddenChars { private set; get; }
+		public HashSet<char> guessedChars { private set; get; }
 		private int penaltyCount;
-
-
-		String getTermKey() {
-			return termKey;
-		}
-
-		String getDefinitionValue() {
-			return definitionValue;
-		}
 
 		int incrementPenaltyCount(){
 			return ++penaltyCount;

@@ -17,9 +17,9 @@ namespace MobileKahrds
 			};
 
 			this.ItemTemplate = new DataTemplate(() =>
-				{
-					return new GamePage();
-				});
+			{
+				return new GamePage();
+			});
 		}
 	}
 }
