@@ -23,22 +23,11 @@ namespace MobileKahrds
 				Navigation.PushAsync(new MyKahrdSetsPage());
 			};
 
-			var settingsButton = new Button { Text = "Settings" };
-			settingsButton.Clicked += (sender, e) => {
-				
-			};
-
-			var aboutButton = new Button { Text = "About" };
-			aboutButton.Clicked += (sender, e) => {
-
-			};
-
 			Content = new StackLayout {
 				VerticalOptions = LayoutOptions.StartAndExpand,
 				Padding = new Thickness(20),
 				Children = {
-					gamesButton, kahrdsButton, 
-					settingsButton, aboutButton
+					gamesButton, kahrdsButton
 				}
 			};
 		}

@@ -9,84 +9,57 @@ namespace MobileKahrds
 {
 	class GamePage : ContentPage
 	{
-		Game game;
-		string thisGame;
-		public GamePage(bool includeBigLabel)
+		public GamePage()
 		{
-			// This binding is necessary to label the tabs in 
-			//      the TabbedPage.
 			this.SetBinding(ContentPage.TitleProperty, "Name");
+		}
 
+		protected override void OnAppearing ()
+		{
+			Game game = (Game)BindingContext;
 
-			// Function to create six Labels.
-			Func<string, string, Label> CreateLabel = (string source, string fmt) =>
-			{
-				Label label = new Label {
-					FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-					XAlign = TextAlignment.End
+			var gamesButton = new Button { 
+				Text = "Play!",
+				VerticalOptions = LayoutOptions.Center
+			};
+			//Play! button for each game page is set here
+			gamesButton.Clicked += (sender, e) => {
+				switch(game.Name){
+				case "Hangman":
+					Navigation.PushAsync(new GameSelectPage());
+					break;
+				case "?????":
+					Navigation.PushAsync(new MainPage());
+					break;
+				case "Flash Kahrds":
+					Navigation.PushAsync(new MyKahrdSetsPage());
+					break;
 				};
-				label.SetBinding(Label.TextProperty,
-					new Binding(source, BindingMode.OneWay, null, null, fmt));
-
-				return label;
 			};
 
-			// BoxView to show the color.
 			Image image = new Image
 			{
-				Source = ImageSource.FromFile("defeatV2.jpg"),
+				Source = ImageSource.FromFile(game.Source),
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
 
-			var gamesButton = new Button { Text = "Play!" };
-				gamesButton.Clicked += (sender, e) => {
-					switch(thisGame){
-					case "Hangman":
-						Navigation.PushAsync(new GameSelectPage());
-						break;
-					case "?????":
-						Navigation.PushAsync(new MainPage());
-						break;
-					case "Flash Cards":
-						Navigation.PushAsync(new MyKahrdSetsPage());
-						break;
-				};
+			Label bigLabel = new Label
+			{
+				FontSize = 50,
+				HorizontalOptions = LayoutOptions.Center
 			};
+			bigLabel.SetBinding(Label.TextProperty, "Name");
 
 			// Build the page
 			this.Content = new StackLayout
 			{
 				Children = 
 				{
-					new StackLayout
-					{   
-						HorizontalOptions = LayoutOptions.Center,
-						VerticalOptions = LayoutOptions.CenterAndExpand,
-
-					},
+					bigLabel,
 					image,
 					gamesButton
-
 				}
 			};
-
-			// Add in the big Label at top for CarouselPage.
-			if (includeBigLabel)
-			{
-				Label bigLabel = new Label
-				{
-					FontSize = 50,
-					HorizontalOptions = LayoutOptions.Center
-				};
-				bigLabel.SetBinding(Label.TextProperty, "Name");
-
-				(this.Content as StackLayout).Children.Insert(0, bigLabel);
-			}
-		}
-		protected override void OnAppearing ()
-		{
-			game = (Game)BindingContext;
-			thisGame = game.Name;
 		}
 	}
 }

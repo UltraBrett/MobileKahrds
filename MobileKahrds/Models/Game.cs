@@ -9,12 +9,12 @@ namespace MobileKahrds
 		public Game(string name, string imageSource)
 		{
 			this.Name = name;
-			this.Image = imageSource;
+			this.Source = imageSource;
 		}
 
 		public string Name { private set; get; }
 
-		public string Image { private set; get; }
+		public string Source { private set; get; }
 
 		public override string ToString()
 		{

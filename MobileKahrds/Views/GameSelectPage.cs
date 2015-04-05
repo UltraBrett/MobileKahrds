@@ -13,13 +13,13 @@ namespace MobileKahrds
 			this.ItemsSource = new Game[] 
 			{
 				new Game("Hangman", "defeatV2.jpg"),
-				new Game("Flash Cards", "defeatV2.jpg"),
-				new Game("?????", "defeatV2.jpg")
+				new Game("Flash Kahrds", "flashkahrds.jpg"),
+				new Game("?????", "idklol.jpg")
 			};
 
 			this.ItemTemplate = new DataTemplate(() =>
 				{
-					return new GamePage(true);
+					return new GamePage();
 				});
 		}
 	}
