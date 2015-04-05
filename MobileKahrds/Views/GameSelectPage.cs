@@ -12,9 +12,9 @@ namespace MobileKahrds
 
 			this.ItemsSource = new Game[] 
 			{
-				new Game("Hangman", Color.Red),
-				new Game("Flash Cards", Color.Yellow),
-				new Game("?????", Color.Green)
+				new Game("Hangman", "defeatV2.jpg"),
+				new Game("Flash Cards", "defeatV2.jpg"),
+				new Game("?????", "defeatV2.jpg")
 			};
 
 			this.ItemTemplate = new DataTemplate(() =>

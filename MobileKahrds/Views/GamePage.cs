@@ -32,13 +32,11 @@ namespace MobileKahrds
 			};
 
 			// BoxView to show the color.
-			BoxView boxView = new BoxView
+			Image image = new Image
 			{
-				WidthRequest = 100,
-				HeightRequest = 100,
-				HorizontalOptions = LayoutOptions.Center
+				Source = ImageSource.FromFile("defeatV2.jpg"),
+				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
-			boxView.SetBinding(BoxView.ColorProperty, "Color");
 
 			var gamesButton = new Button { Text = "Play!" };
 				gamesButton.Clicked += (sender, e) => {
@@ -66,11 +64,11 @@ namespace MobileKahrds
 						VerticalOptions = LayoutOptions.CenterAndExpand,
 
 					},
-					boxView,
+					image,
 					gamesButton
 
 				}
-				};
+			};
 
 			// Add in the big Label at top for CarouselPage.
 			if (includeBigLabel)

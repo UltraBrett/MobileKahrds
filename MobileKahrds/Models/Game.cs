@@ -6,15 +6,15 @@ namespace MobileKahrds
 	// Used in TabbedPageDemoPage & CarouselPageDemoPage.
 	class Game
 	{
-		public Game(string name, Color color)
+		public Game(string name, string imageSource)
 		{
 			this.Name = name;
-			this.Color = color;
+			this.Image = imageSource;
 		}
 
 		public string Name { private set; get; }
 
-		public Color Color { private set; get; }
+		public string Image { private set; get; }
 
 		public override string ToString()
 		{
