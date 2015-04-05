@@ -15,12 +15,12 @@ namespace MobileKahrds
 
 			var gamesButton = new Button { Text = "Games" };
 			gamesButton.Clicked += (sender, e) => {
-				
+				Navigation.PushAsync(new GameSelectPage());
 			};
 
 			var kahrdsButton = new Button { Text = "My Kahrd Sets" };
 			kahrdsButton.Clicked += (sender, e) => {
-					Navigation.PushAsync(new MyKahrdSetsPage());
+				Navigation.PushAsync(new MyKahrdSetsPage());
 			};
 
 			var settingsButton = new Button { Text = "Settings" };
