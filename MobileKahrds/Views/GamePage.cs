@@ -7,14 +7,10 @@ using Xamarin.Forms;
 
 namespace MobileKahrds
 {
-	// Used in:
-	//      MasterDetailPageDemoPage (as a page)
-	//      TabbedPageDemoPage (as a page template)
-	//      CarouselPageDemoPage (as a page template)
-	//
-	//  Expects BindingContext to be of type NamedColor!
 	class GamePage : ContentPage
 	{
+		Game game;
+		string thisGame;
 		public GamePage(bool includeBigLabel)
 		{
 			// This binding is necessary to label the tabs in 
@@ -45,8 +41,18 @@ namespace MobileKahrds
 			boxView.SetBinding(BoxView.ColorProperty, "Color");
 
 			var gamesButton = new Button { Text = "Play!" };
-			gamesButton.Clicked += (sender, e) => {
-				Navigation.PushAsync(new GameSelectPage());
+				gamesButton.Clicked += (sender, e) => {
+					switch(thisGame){
+					case "Hangman":
+						Navigation.PushAsync(new GameSelectPage());
+						break;
+					case "?????":
+						Navigation.PushAsync(new MainPage());
+						break;
+					case "Flash Cards":
+						Navigation.PushAsync(new MyKahrdSetsPage());
+						break;
+				};
 			};
 
 			// Build the page
@@ -78,6 +84,11 @@ namespace MobileKahrds
 
 				(this.Content as StackLayout).Children.Insert(0, bigLabel);
 			}
+		}
+		protected override void OnAppearing ()
+		{
+			game = (Game)BindingContext;
+			thisGame = game.Name;
 		}
 	}
 }

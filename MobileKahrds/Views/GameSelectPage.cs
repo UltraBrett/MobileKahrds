@@ -8,7 +8,7 @@ namespace MobileKahrds
 	{
 		public GameSelectPage ()
 		{
-			this.Title = "CarouselPage";
+			this.Title = "Games";
 
 			this.ItemsSource = new Game[] 
 			{
