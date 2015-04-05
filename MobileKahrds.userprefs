@@ -1,15 +1,13 @@
 ﻿<Properties StartupItem="Droid\MobileKahrds.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus S (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\Views\MyKahrdSetsPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\Models\HangmanModel.cs">
     <Files>
-      <File FileName="MobileKahrds\Views\MyKahrdSetsPage.cs" Line="56" Column="28" />
-      <File FileName="MobileKahrds\Data\SetItemDatabase.cs" Line="73" Column="80" />
-      <File FileName="MobileKahrds\Views\SelectQuestionPage.cs" Line="50" Column="7" />
+      <File FileName="MobileKahrds\Views\Hangman.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds\Models\HangmanModel.cs" Line="7" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Targets.MobileKahrds.Droid AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>

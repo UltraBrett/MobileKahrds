@@ -20,9 +20,18 @@ namespace MobileKahrds
 
 			var gamesButton = new Button { 
 				Text = "Play!",
-				VerticalOptions = LayoutOptions.Center
+				VerticalOptions = LayoutOptions.Center,
+				HorizontalOptions = LayoutOptions.Start
+			};
+
+			Picker picker = new Picker
+			{
+				Title = "Kahrd sets",
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalOptions = LayoutOptions.End
 			};
 			//Play! button for each game page is set here
+
 			gamesButton.Clicked += (sender, e) => {
 				switch(game.Name){
 				case "Hangman":
@@ -57,7 +66,16 @@ namespace MobileKahrds
 				{
 					bigLabel,
 					image,
-					gamesButton
+					new StackLayout
+					{
+						Spacing = 0,
+						Orientation = StackOrientation.Horizontal,
+						HorizontalOptions = LayoutOptions.Center,
+						Children = 
+						{
+							gamesButton, picker
+						}
+					}
 				}
 			};
 		}
