@@ -10,7 +10,7 @@ namespace MobileKahrds
 		int penalties;
 		string[,] dictionary;
 		string hiddenAnswer;
-		Image image;
+		Image image1, image2, image3, image4, image5, image6, image7;
 		Label hiddenAnswerLabel;
 
 		public HangmanPage ()
@@ -46,10 +46,41 @@ namespace MobileKahrds
 				HorizontalOptions = LayoutOptions.Center
 			};
 
-			image = new Image
+			image1 = new Image
 			{
 				Source = ImageSource.FromFile("game_start.jpg"),
 			};
+			image2 = new Image
+			{
+				Source = ImageSource.FromFile("one_penalty.jpg"),
+				IsVisible = false
+			};
+			image3 = new Image
+			{
+				Source = ImageSource.FromFile("two_penalties.jpg"),
+				IsVisible = false
+			};
+			image4 = new Image
+			{
+				Source = ImageSource.FromFile("three_penalties.jpg"),
+				IsVisible = false
+			};
+			image5 = new Image
+			{
+				Source = ImageSource.FromFile("four_penalties.jpg"),
+				IsVisible = false
+			};
+			image6 = new Image
+			{
+				Source = ImageSource.FromFile("five_penalties.jpg"),
+				IsVisible = false
+			};
+			image7 = new Image
+			{
+				Source = ImageSource.FromFile("defeat.jpg"),
+				IsVisible = false
+			};
+
 
 			hiddenAnswer = "";
 			for (int i = 0; i < hangman.termKey.Length; i++) {
@@ -249,7 +280,7 @@ namespace MobileKahrds
 			Content = new StackLayout {
 				Children = {
 					label,
-					image,
+					image1, image2, image3, image4, image5, image6, image7,
 					hiddenAnswerLabel,
 					new StackLayout
 					{
@@ -308,27 +339,29 @@ namespace MobileKahrds
 				}
 			} else {
 				penalties = hangman.incrementPenaltyCount ();
-				switch (penalties) {
-				case 1:
-					image.Source = "one_penalty.jpg";
-					break;
-				case 2:
-					image.Source = "two_penalties.jpg";
-					break;
-				case 3:
-					image.Source = "three_penalties.jpg";
-					break;
-				case 4:
-					image.Source = "four_penalties.jpg";
-					break;
-				case 5:
-					image.Source = "five_penalties.jpg";
-					break;
-				default:
-					image.Source = "defeatV2.jpg";
-					break;
+				if (penalties == 1) {
+					image1.IsVisible = false;
+					image2.IsVisible = true;
+				}
+				if (penalties == 2) {
+					image2.IsVisible = false;
+					image3.IsVisible = true;
+				}
+				if (penalties == 3) {
+					image3.IsVisible = false;
+					image4.IsVisible = true;
+				}
+				if (penalties == 4) {
+					image4.IsVisible = false;
+					image5.IsVisible = true;
+				}
+				if (penalties == 5) {
+					image5.IsVisible = false;
+					image6.IsVisible = true;
 				}
 				if (penalties == 6) {
+					image6.IsVisible = false;
+					image7.IsVisible = true;
 					gameOver ("lose");
 				}
 			}
