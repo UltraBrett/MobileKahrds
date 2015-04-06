@@ -10,6 +10,7 @@ namespace MobileKahrds
 		string[,] dictionary;
 		Image image;
 		string hiddenAnswer;
+		Label hiddenAnswerLabel;
 
 		public HangmanPage ()
 		{
@@ -49,12 +50,12 @@ namespace MobileKahrds
 				Source = ImageSource.FromFile("game_start.jpg"),
 			};
 
-			hiddenAnswer = "__ ";
+			hiddenAnswer = "";
 			for (int i = 0; i < hangman.termKey.Length; i++) {
 				hiddenAnswer = hiddenAnswer + "__ ";
 			}
 
-			Label hiddenAnswerLabel = new Label
+			hiddenAnswerLabel = new Label
 			{
 				Text = hiddenAnswer,
 				FontSize = 20,
@@ -285,6 +286,26 @@ namespace MobileKahrds
 		}
 
 		public void inputChar(char input){
+			hangman.guessedChars.Add(input);
+			if(checkForMatch(input)){;
+
+				char[] progress = hiddenAnswerLabel.Text.ToCharArray();
+
+				for (int i = 0; i < hangman.termKey.Length; i++) {
+					if (hangman.termKey[i] == input) {
+						progress[3 * i] = ' ';
+						progress[3 * i + 1] = input;
+					}
+				}
+
+				string newProgress = new string (progress);
+
+				hiddenAnswerLabel.Text = newProgress;
+
+				if(checkForVictory(hangman)){
+					gameOver("win");
+				}
+			}
 			switch (hangman.incrementPenaltyCount ()) {
 			case 1:
 				image.Source = "one_penalty.jpg";
@@ -307,8 +328,11 @@ namespace MobileKahrds
 			}
 		}
 
+		public void gameOver(string scenario){
+		}
+
 		public bool checkForMatch(char input){
-			return true;
+			return (hangman.hiddenChars.Contains(input)) ? true : false;
 		}
 
 		public bool checkForVictory(HangmanModel hangman){
