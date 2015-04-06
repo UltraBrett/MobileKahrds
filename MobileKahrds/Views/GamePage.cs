@@ -53,7 +53,13 @@ namespace MobileKahrds
 					Navigation.PushAsync(new MainPage());
 					break;
 				case "Flash Kahrds":
-					Navigation.PushAsync(new MyKahrdSetsPage());
+					if(picker.SelectedIndex >= 0){
+						var setItem = new SetItem();
+						setItem.Set = picker.Items[picker.SelectedIndex];
+						var setPage = new FlashCards();
+						setPage.BindingContext = setItem;
+						Navigation.PushAsync(setPage);
+					}
 					break;
 				};
 			};
