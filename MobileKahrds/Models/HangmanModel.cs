@@ -28,7 +28,8 @@ namespace MobileKahrds
 			sourcestring = sourcestring.ToUpper ();
 			char[] chars = sourcestring.ToCharArray();
 			for (int i=0; i<chars.Length; i++){
-				characterSet.Add(chars[i]);
+				if(chars[i] != ' ')
+					characterSet.Add(chars[i]);
 			}
 			return characterSet;
 		}
