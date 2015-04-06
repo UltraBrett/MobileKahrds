@@ -19,7 +19,7 @@ namespace MobileKahrds
 		public HashSet<char> guessedChars { private set; get; }
 		private int penaltyCount;
 
-		int incrementPenaltyCount(){
+		public int incrementPenaltyCount(){
 			return ++penaltyCount;
 		}
 

@@ -285,11 +285,30 @@ namespace MobileKahrds
 		}
 
 		public void inputChar(char input){
-			image.Source = "idklol.jpg";
+			switch (hangman.incrementPenaltyCount ()) {
+			case 1:
+				image.Source = "one_penalty.jpg";
+				break;
+			case 2:
+				image.Source = "two_penalties.jpg";
+				break;
+			case 3:
+				image.Source = "three_penalties.jpg";
+				break;
+			case 4:
+				image.Source = "four_penalties.jpg";
+				break;
+			case 5:
+				image.Source = "five_penalties.jpg";
+				break;
+			default:
+				image.Source = "defeatV2.jpg";
+				break;
+			}
 		}
 
 		public bool checkForMatch(char input){
-			return (hangman.hiddenChars.Contains(input)) ? true : false;
+			return true;
 		}
 
 		public bool checkForVictory(HangmanModel hangman){
