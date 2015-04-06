@@ -7,9 +7,10 @@ namespace MobileKahrds
 	{
 		HangmanModel hangman;
 		int length;
+		int penalties;
 		string[,] dictionary;
-		Image image;
 		string hiddenAnswer;
+		Image image;
 		Label hiddenAnswerLabel;
 
 		public HangmanPage ()
@@ -287,14 +288,15 @@ namespace MobileKahrds
 
 		public void inputChar(char input){
 			hangman.guessedChars.Add(input);
-			if(checkForMatch(input)){;
+			if (checkForMatch (input)) {
+				;
 
-				char[] progress = hiddenAnswerLabel.Text.ToCharArray();
+				char[] progress = hiddenAnswerLabel.Text.ToCharArray ();
 
 				for (int i = 0; i < hangman.termKey.Length; i++) {
-					if (hangman.termKey[i] == input) {
-						progress[3 * i] = ' ';
-						progress[3 * i + 1] = input;
+					if (hangman.termKey [i] == input) {
+						progress [3 * i] = ' ';
+						progress [3 * i + 1] = input;
 					}
 				}
 
@@ -302,29 +304,34 @@ namespace MobileKahrds
 
 				hiddenAnswerLabel.Text = newProgress;
 
-				if(checkForVictory(hangman)){
-					gameOver("win");
+				if (checkForVictory (hangman)) {
+					gameOver ("win");
 				}
-			}
-			switch (hangman.incrementPenaltyCount ()) {
-			case 1:
-				image.Source = "one_penalty.jpg";
-				break;
-			case 2:
-				image.Source = "two_penalties.jpg";
-				break;
-			case 3:
-				image.Source = "three_penalties.jpg";
-				break;
-			case 4:
-				image.Source = "four_penalties.jpg";
-				break;
-			case 5:
-				image.Source = "five_penalties.jpg";
-				break;
-			default:
-				image.Source = "defeatV2.jpg";
-				break;
+			} else {
+				penalties = hangman.incrementPenaltyCount ();
+				switch (penalties) {
+				case 1:
+					image.Source = "one_penalty.jpg";
+					break;
+				case 2:
+					image.Source = "two_penalties.jpg";
+					break;
+				case 3:
+					image.Source = "three_penalties.jpg";
+					break;
+				case 4:
+					image.Source = "four_penalties.jpg";
+					break;
+				case 5:
+					image.Source = "five_penalties.jpg";
+					break;
+				default:
+					image.Source = "defeatV2.jpg";
+					break;
+				}
+				if (penalties == 6) {
+					gameOver ("lose");
+				}
 			}
 		}
 
