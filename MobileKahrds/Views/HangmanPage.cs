@@ -289,7 +289,6 @@ namespace MobileKahrds
 		public void inputChar(char input){
 			hangman.guessedChars.Add(input);
 			if (checkForMatch (input)) {
-				;
 
 				char[] progress = hiddenAnswerLabel.Text.ToCharArray ();
 
@@ -335,7 +334,15 @@ namespace MobileKahrds
 			}
 		}
 
-		public void gameOver(string scenario){
+		public async void gameOver(string scenario){
+			string titleMessage = (scenario == "win") ? "You win!" : "He's dead, Jim";
+			string displayMessage = (scenario == "win") ? "" : "The answer was " + hangman.termKey + ". ";
+			bool replay = await DisplayAlert (titleMessage, displayMessage + "Would you like to play again?", "Yes", "No");
+			if(replay == true){
+				onCreate ();
+			} else {
+				this.Navigation.PopAsync();
+			}
 		}
 
 		public bool checkForMatch(char input){
