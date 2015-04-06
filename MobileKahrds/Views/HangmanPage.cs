@@ -246,7 +246,7 @@ namespace MobileKahrds
 				inputChar('Z');
 			};
 
-			this.Content = new StackLayout {
+			Content = new StackLayout {
 				Children = {
 					label,
 					image,
@@ -338,15 +338,15 @@ namespace MobileKahrds
 			string titleMessage = (scenario == "win") ? "You win!" : "He's dead, Jim";
 			string displayMessage = (scenario == "win") ? "" : "The answer was " + hangman.termKey + ". ";
 			bool replay = await DisplayAlert (titleMessage, displayMessage + "Would you like to play again?", "Yes", "No");
-			if(replay == true){
+			if(replay){
 				onCreate ();
 			} else {
-				this.Navigation.PopAsync();
+				await Navigation.PopAsync();
 			}
 		}
 
 		public bool checkForMatch(char input){
-			return (hangman.hiddenChars.Contains(input)) ? true : false;
+			return hangman.hiddenChars.Contains(input);
 		}
 
 		public bool checkForVictory(HangmanModel hangman){
