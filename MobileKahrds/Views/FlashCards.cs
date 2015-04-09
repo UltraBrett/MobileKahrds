@@ -48,41 +48,38 @@ namespace MobileKahrds
 				HorizontalOptions = LayoutOptions.Center
 			};
 
-			var showDefinition = new Button { Text = "Show Definition", HeightRequest = 70, WidthRequest = 100, FontSize = 14 };
+			var showDefinition = new Button { Text = "Show Definition" };
 			showDefinition.Clicked += (sender, e) => {
 				answer.Text = dictionary[1, id];
 			};
 
-			var hideDefinition = new Button { Text = "Hide Definition", HeightRequest = 70, WidthRequest = 100, FontSize = 14 };
+			var hideDefinition = new Button { Text = "Hide Definition" };
 			hideDefinition.Clicked += (sender, e) => {
 				answer.Text = "";
 			};
 
-			var nextCard = new Button { Text = "Next Card", HeightRequest = 70, WidthRequest = 100, FontSize = 14 };
+			var nextCard = new Button { Text = "Next Card" };
 			nextCard.Clicked += (sender, e) => {
 				newCard();
 			};
 
-			var quitGame = new Button { Text = "Quit Game", HeightRequest = 70, WidthRequest = 100, FontSize = 14 };
+			var quitGame = new Button { Text = "Quit Game" };
 			quitGame.Clicked += (sender, e) => {
 				Navigation.PopAsync();
 			};
 
 			Content = new StackLayout {
+				VerticalOptions = LayoutOptions.StartAndExpand,
+				Padding = new Thickness(20),
 				Children = {
 					question,
 					answer,
-					new StackLayout
-					{
-						Spacing = 0,
-						Orientation = StackOrientation.Horizontal,
-						HorizontalOptions = LayoutOptions.Center,
-						Children = 
-						{
-							showDefinition, hideDefinition, nextCard, quitGame
-						}
+					showDefinition,
+					hideDefinition,
+					nextCard,
+					quitGame
 					}
-				}
+
 			};
 		}
 	}
