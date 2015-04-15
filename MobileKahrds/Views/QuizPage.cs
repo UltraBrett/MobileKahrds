@@ -14,11 +14,7 @@ namespace MobileKahrds
 
 		public QuizPage ()
 		{
-			Title = "): QUIZ TIME :(";
-
-			this.SetBinding (ContentPage.TitleProperty, "Name");
-
-			NavigationPage.SetHasNavigationBar (this, true);
+			this.Title = "): QUIZ TIME :(";
 		}
 
 		protected override void OnAppearing ()
@@ -121,7 +117,7 @@ namespace MobileKahrds
 			string[] possibleAnswers = new string[4];
 
 			for (int i = 0; i < 4; i++) {
-				if (i == correct) {
+				if (i+1 == correct) {
 					possibleAnswers [i] = dictionary [0, dictionaryID];
 				} else {
 					int flag = 0;
