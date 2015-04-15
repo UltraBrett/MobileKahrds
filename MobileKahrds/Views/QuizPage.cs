@@ -14,7 +14,7 @@ namespace MobileKahrds
 
 		public QuizPage ()
 		{
-			this.Title = "): QUIZ TIME :(";
+			NavigationPage.SetHasNavigationBar (this, false);
 		}
 
 		protected override void OnAppearing ()
@@ -85,7 +85,7 @@ namespace MobileKahrds
 			newQAs ();
 		}
 
-		public void checkForCorrect(int answer){
+		public async void checkForCorrect(int answer){
 			if (correct == answer) {
 				if (answer == 1)
 					answer1.BackgroundColor = Color.Green;
@@ -95,6 +95,12 @@ namespace MobileKahrds
 					answer3.BackgroundColor = Color.Green;
 				if (answer == 4)
 					answer4.BackgroundColor = Color.Green;
+				bool replay = await DisplayAlert ("Correct!", "Would you like to play again?", "Yes", "No");
+				if(replay){
+					onCreate ();
+				} else {
+					await Navigation.PopAsync();
+				}
 			} else {
 				if (answer == 1)
 					answer1.BackgroundColor = Color.Red;
