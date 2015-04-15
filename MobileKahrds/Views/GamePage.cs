@@ -39,29 +39,33 @@ namespace MobileKahrds
 
 			//Play! button for each game page is set here
 			gamesButton.Clicked += (sender, e) => {
+				var setItem = new SetItem();
+				setItem.Set = picker.Items[picker.SelectedIndex];
 				switch(game.Name){
 				case "Hangman":
 					if(picker.SelectedIndex >= 0){
-						var setItem = new SetItem();
-						setItem.Set = picker.Items[picker.SelectedIndex];
 						var setPage = new HangmanPage();
 						setPage.BindingContext = setItem;
 						Navigation.PushAsync(setPage);
 					}
 					break;
-				case "?????":
-					Navigation.PushAsync(new MainPage());
-					break;
-				case "Flash Kahrds":
+				case "Kahrd Quiz":
 					if(picker.SelectedIndex >= 0){
-						var setItem = new SetItem();
-						setItem.Set = picker.Items[picker.SelectedIndex];
-						var setPage = new FlashCards();
+						var setPage = new QuizPage();
 						setPage.BindingContext = setItem;
 						Navigation.PushAsync(setPage);
 					}
 					break;
+				case "Flash Kahrds":
+					if(picker.SelectedIndex >= 0){
+						var setPage = new FlashCards();
+						setPage.BindingContext = setItem;
+						Navigation.PushAsync(setPage);
+
+					}
+					break;
 				};
+
 			};
 
 			Image image = new Image

@@ -34,6 +34,7 @@ namespace MobileKahrds
 
 			onCreate ();
 		}
+
 		public void onCreate(){
 			Random rand = new Random ();
 			int id = rand.Next (0, length);
