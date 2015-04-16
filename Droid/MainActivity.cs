@@ -11,7 +11,7 @@ using Android.Content.PM;
 
 namespace MobileKahrds
 {
-	[Activity (Label = "Mobile Kahrds", Icon = "@drawable/icon", MainLauncher = true, 
+	[Activity (Label = "Mobile Kahrds", Icon = "@drawable/kahrdsLogo", MainLauncher = true, 
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : 
 	global::Xamarin.Forms.Platform.Android.FormsApplicationActivity // superclass new in 1.3

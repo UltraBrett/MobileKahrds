@@ -1,35 +1,75 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace MobileKahrds
 {
 	public class MainPage : ContentPage
 	{
+		ListView listView;
 		public MainPage ()
 		{
 			Title = "Mobile Kahrds";
 
-			this.SetBinding (ContentPage.TitleProperty, "Name");
+			listView = new ListView ();
+			listView.ItemTemplate = new DataTemplate 
+				(typeof (SetCell));
 
-			NavigationPage.SetHasNavigationBar (this, true);
+			var layout = new StackLayout();
+			if (Device.OS == TargetPlatform.WinPhone) { // WinPhone doesn't have the title showing
+				layout.Children.Add(new Label{
+					Text="Sets", 
+					FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))});
+			}
+			layout.Children.Add(listView);
+			layout.VerticalOptions = LayoutOptions.FillAndExpand;
+			Content = layout;
 
-			var gamesButton = new Button { Text = "Games" };
-			gamesButton.Clicked += (sender, e) => {
-				Navigation.PushAsync(new GameSelectPage());
-			};
+			#region toolbar
+			ToolbarItem tbi = null;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				tbi = new ToolbarItem("+", null, () =>
+					{
+						var todoItem = new SetItem();
+						var todoPage = new CreateSetPage();
+						todoPage.BindingContext = todoItem;
+						Navigation.PushAsync(todoPage);
+					}, 0, 0);
+			}
+			if (Device.OS == TargetPlatform.Android) { // BUG: Android doesn't support the icon being null
+				tbi = new ToolbarItem ("+", "plus", () => {
+					var todoItem = new SetItem();
+					var todoPage = new CreateSetPage();
+					todoPage.BindingContext = todoItem;
+					Navigation.PushAsync(todoPage);
+				}, 0, 0);
+			}
+			if (Device.OS == TargetPlatform.WinPhone)
+			{
+				tbi = new ToolbarItem("Add", "add.png", () =>
+					{
+						var todoItem = new SetItem();
+						var todoPage = new CreateSetPage();
+						todoPage.BindingContext = todoItem;
+						Navigation.PushAsync(todoPage);
+					}, 0, 0);
+			}
 
-			var kahrdsButton = new Button { Text = "My Kahrd Sets" };
-			kahrdsButton.Clicked += (sender, e) => {
-				Navigation.PushAsync(new MyKahrdSetsPage());
-			};
+			ToolbarItems.Add (tbi);
 
-			Content = new StackLayout {
-				VerticalOptions = LayoutOptions.StartAndExpand,
-				Padding = new Thickness(20),
-				Children = {
-					gamesButton, kahrdsButton
-				}
-			};
+			#endregion
+		}
+
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+			// reset the 'resume' id, since we just want to re-start here
+			listView.ItemsSource = App.Database.GetSetNames ();
 		}
 	}
 }
