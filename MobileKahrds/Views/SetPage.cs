@@ -2,16 +2,18 @@
 
 namespace MobileKahrds
 {
-	public class MainPage : ContentPage
+	public class SetPage : ContentPage
 	{
 		ListView listView;
-		public MainPage ()
+		SetItem setItem;
+
+		public SetPage ()
 		{
-			Title = "Mobile Kahrds";
+			this.SetBinding(ContentPage.TitleProperty, "Set");
 
 			listView = new ListView ();
 			listView.ItemTemplate = new DataTemplate 
-				(typeof (SetCell));
+				(typeof (ItemCell));
 			listView.ItemSelected += (sender, e) => {
 				var item = (SetItem)e.SelectedItem;
 				var page = new SetPage();
@@ -25,18 +27,25 @@ namespace MobileKahrds
 			Content = layout;
 
 			ToolbarItem tbi = new ToolbarItem ("+", "plus", () => {
-					var todoItem = new SetItem();
-					var todoPage = new CreateSetPage();
-					todoPage.BindingContext = todoItem;
-					Navigation.PushAsync(todoPage);
-				}, 0, 0);
+				var todoItem = new SetItem();
+				var todoPage = new CreateSetPage();
+				todoPage.BindingContext = todoItem;
+				Navigation.PushAsync(todoPage);
+			}, 0, 0);
+			ToolbarItems.Add (tbi);
+
+			tbi = new ToolbarItem ("delete", "delete", () => {
+				App.Database.DeleteSet(setItem.Set);
+				Navigation.PopAsync();
+			}, 0, 1);
 			ToolbarItems.Add (tbi);
 		}
 
 		protected override void OnAppearing ()
 		{
+			setItem = (SetItem)BindingContext;
 			base.OnAppearing ();
-			listView.ItemsSource = App.Database.GetSetNames ();
+			listView.ItemsSource = App.Database.GetSetItems(setItem.Set);
 		}
 	}
 }

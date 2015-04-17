@@ -28,7 +28,7 @@ namespace MobileKahrds
 		public IEnumerable<SetItem> GetSetItems (string setName)
 		{
 			lock (locker) {
-				return database.Query<SetItem>("SELECT * FROM [SetItem] WHERE [Set] = '" + setName + "' AND [Question] IS NOT NULL").ToArray();
+				return database.Query<SetItem>("SELECT * FROM [SetItem] WHERE [Set] = '" + setName + "' AND [Question] IS NOT NULL").ToList();
 			}
 		}
 

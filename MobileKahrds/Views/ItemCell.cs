@@ -3,16 +3,16 @@ using Xamarin.Forms;
 
 namespace MobileKahrds
 {
-	public class SetCell : ViewCell
+	public class ItemCell : ViewCell
 	{
 		SetItem setItem;
-		public SetCell ()
+		public ItemCell ()
 		{
 			var label = new Label {
 				YAlign = TextAlignment.Center,
 				FontSize = 20
 			};
-			label.SetBinding (Label.TextProperty, "Set");
+			label.SetBinding (Label.TextProperty, "Answer");
 
 			var layout = new StackLayout {
 				Padding = new Thickness(20, 0, 0, 0),
@@ -22,7 +22,7 @@ namespace MobileKahrds
 			};
 			View = layout;
 		}
-
+			
 		protected override void OnBindingContextChanged ()
 		{
 			setItem = (SetItem)BindingContext;

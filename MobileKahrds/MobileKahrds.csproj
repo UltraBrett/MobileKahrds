@@ -46,6 +46,8 @@
     <Compile Include="Views\HangmanPage.cs" />
     <Compile Include="Views\FlashCards.cs" />
     <Compile Include="Views\QuizPage.cs" />
+    <Compile Include="Views\ItemCell.cs" />
+    <Compile Include="Views\SetPage.cs" />
     <Compile Include="Views\SetCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
