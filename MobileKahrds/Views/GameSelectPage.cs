@@ -13,7 +13,7 @@ namespace MobileKahrds
 			{
 				new Game("Hangman", "defeatV2.jpg"),
 				new Game("Flash Kahrds", "flashkahrds.jpg"),
-				new Game("?????", "idklol.jpg")
+				new Game("Quiz", "idklol.jpg")
 			};
 
 			this.ItemTemplate = new DataTemplate(() =>

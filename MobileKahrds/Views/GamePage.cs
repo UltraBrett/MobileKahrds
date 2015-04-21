@@ -49,8 +49,14 @@ namespace MobileKahrds
 						Navigation.PushAsync(setPage);
 					}
 					break;
-				case "?????":
-					Navigation.PushAsync(new MainPage());
+				case "Quiz":
+					if(picker.SelectedIndex >= 0){
+						var setItem = new SetItem();
+						setItem.Set = picker.Items[picker.SelectedIndex];
+						var setPage = new QuizPage();
+						setPage.BindingContext = setItem;
+						Navigation.PushAsync(setPage);
+					}
 					break;
 				case "Flash Kahrds":
 					if(picker.SelectedIndex >= 0){
