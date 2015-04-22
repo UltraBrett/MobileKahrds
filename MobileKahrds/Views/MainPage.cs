@@ -25,7 +25,7 @@ namespace MobileKahrds
 			Content = layout;
 
 			ToolbarItem tbi = new ToolbarItem ("dots", "dots", () => {
-				Navigation.PushAsync(new SettingsPage());
+				Navigation.PushAsync(new KahrdsAPIPage());
 			}, 0, 1);
 			ToolbarItems.Add (tbi);
 
