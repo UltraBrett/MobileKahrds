@@ -28,8 +28,17 @@ namespace MobileKahrds
 			Content = layout;
 
 			ToolbarItem tbi = new ToolbarItem ("play", "play", () => {
-				var page = new GameSelectPage(setItem.Set);
-				Navigation.PushAsync(page);
+				var kvSets = App.Database.GetSetItems(setItem.Set);
+				var length = 0;
+				foreach (var kv in kvSets) {
+					length++;
+				}
+				if(length <= 1){
+					DisplayAlert("You've made a huge mistake!", "Games require at least two items in a set to play.", "Ok");
+				} else {				
+					var page = new GameSelectPage(setItem.Set);
+					Navigation.PushAsync(page);
+				}
 			}, 0, 0);
 			ToolbarItems.Add (tbi);
 
@@ -43,8 +52,7 @@ namespace MobileKahrds
 			ToolbarItems.Add (tbi);
 
 			tbi = new ToolbarItem ("delete", "delete", () => {
-				App.Database.DeleteSet(setItem.Set);
-				Navigation.PopAsync();
+				deleteSet();
 			}, 0, 2);
 			ToolbarItems.Add (tbi);
 		}
@@ -54,6 +62,14 @@ namespace MobileKahrds
 			setItem = (SetItem)BindingContext;
 			base.OnAppearing ();
 			listView.ItemsSource = App.Database.GetSetItems(setItem.Set);
+		}
+
+		public async void deleteSet(){
+			bool delete = await DisplayAlert ("Delete a set", "Are you sure you want to delete this set?", "Yes", "No");
+			if(delete){
+				App.Database.DeleteSet(setItem.Set);
+				Navigation.PopAsync();
+			} 
 		}
 	}
 }
