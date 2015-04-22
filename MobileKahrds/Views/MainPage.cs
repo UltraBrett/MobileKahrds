@@ -24,12 +24,17 @@ namespace MobileKahrds
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
 
-			ToolbarItem tbi = new ToolbarItem ("+", "plus", () => {
-					var todoItem = new SetItem();
-					var todoPage = new CreateSetPage();
-					todoPage.BindingContext = todoItem;
-					Navigation.PushAsync(todoPage);
-				}, 0, 0);
+			ToolbarItem tbi = new ToolbarItem ("dots", "dots", () => {
+				Navigation.PushAsync(new SettingsPage());
+			}, 0, 1);
+			ToolbarItems.Add (tbi);
+
+			tbi = new ToolbarItem ("+", "plus", () => {
+				var todoItem = new SetItem();
+				var todoPage = new CreateSetPage();
+				todoPage.BindingContext = todoItem;
+				Navigation.PushAsync(todoPage);
+			}, 0, 0);
 			ToolbarItems.Add (tbi);
 		}
 
