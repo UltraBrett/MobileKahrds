@@ -4,28 +4,21 @@ namespace MobileKahrds
 {
 	public class GameSelectPage : CarouselPage
 	{		
-
-		SetItem setItem;
-		public GameSelectPage ()
+		public GameSelectPage (string setName)
 		{
 			Title = "Games";
 
 			ItemsSource = new [] 
 			{
-				new Game("Hangman", "defeatV2.jpg", setItem.Set),
-				new Game("Flash Kahrds", "flashkahrds.jpg", setItem.Set),
-				new Game("Kahrd Quiz", "idklol.jpg", setItem.Set)
+				new Game("Hangman", "defeatV2.jpg", setName),
+				new Game("Flash Kahrds", "flashkahrds.jpg", setName),
+				new Game("Kahrd Quiz", "idklol.jpg", setName)
 			};
 
 			ItemTemplate = new DataTemplate(() =>
 			{
 				return new GamePage();
 			});
-		}
-
-		protected override void OnAppearing ()
-		{
-			setItem = (SetItem)BindingContext;
 		}
 	}
 }
