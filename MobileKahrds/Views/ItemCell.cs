@@ -5,7 +5,6 @@ namespace MobileKahrds
 {
 	public class ItemCell : ViewCell
 	{
-		SetItem setItem;
 		public ItemCell ()
 		{
 			var label = new Label {
@@ -25,7 +24,6 @@ namespace MobileKahrds
 			
 		protected override void OnBindingContextChanged ()
 		{
-			setItem = (SetItem)BindingContext;
 			View.BindingContext = BindingContext;
 			base.OnBindingContextChanged ();
 		}

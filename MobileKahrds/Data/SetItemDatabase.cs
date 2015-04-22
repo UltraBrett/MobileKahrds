@@ -47,7 +47,7 @@ namespace MobileKahrds
 			}
 		}
 
-		public int SaveItem (SetItem item) 
+		public int NewItem (SetItem item) 
 		{
 			lock (locker) {
 				if (item.ID != 0) {
@@ -56,6 +56,13 @@ namespace MobileKahrds
 				} else {
 					return database.Insert(item);
 				}
+			}
+		}
+
+		public void SaveItem (SetItem item) 
+		{
+			lock (locker) {
+				database.Update(item);
 			}
 		}
 

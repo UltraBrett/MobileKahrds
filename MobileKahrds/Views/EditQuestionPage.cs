@@ -5,12 +5,11 @@ namespace MobileKahrds
 {
 	public class EditQuestionPage : ContentPage
 	{
-		SetItem setItem;
-		String question;
-		String setName;
-		public EditQuestionPage ()
+		protected override void OnAppearing ()
 		{
-			this.SetBinding (ContentPage.TitleProperty, "Name");
+			var setItem = (SetItem)BindingContext;
+			var	question = setItem.Question;
+			var setName = setItem.Set;
 
 			NavigationPage.SetHasNavigationBar (this, false);
 
@@ -24,15 +23,14 @@ namespace MobileKahrds
 
 			var saveButton = new Button { Text = "Save Question" };
 			saveButton.Clicked += (sender, e) => {
-				App.Database.DeleteItem(question, setName);
 				var editSetItem = (SetItem)BindingContext;
 				App.Database.SaveItem(editSetItem);
 				this.Navigation.PopAsync();
 			};
 
-			var cancelButton = new Button { Text = "Cancel" };
-			cancelButton.Clicked += (sender, e) => {
-				var set = (SetItem)BindingContext;
+			var deleteButton = new Button { Text = "Delete" };
+			deleteButton.Clicked += (sender, e) => {
+				App.Database.DeleteItem(question, setName);
 				this.Navigation.PopAsync();
 			};
 
@@ -42,15 +40,9 @@ namespace MobileKahrds
 				Children = {
 					questionLabel, questionEntry,
 					answerLabel, answerEntry,
-					saveButton, cancelButton
+					saveButton, deleteButton
 				}
 			};
-		}
-		protected override void OnAppearing ()
-		{
-			setItem = (SetItem)BindingContext;
-			question = setItem.Question;
-			setName = setItem.Set;
 		}
 	}
 }
