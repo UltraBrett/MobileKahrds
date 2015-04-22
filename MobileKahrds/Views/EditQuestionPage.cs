@@ -28,19 +28,26 @@ namespace MobileKahrds
 				this.Navigation.PopAsync();
 			};
 
-			var deleteButton = new Button { Text = "Delete" };
+			var cancelButton = new Button { Text = "Cancel" };
+			cancelButton.Clicked += (sender, e) => {
+				this.Navigation.PopAsync();
+			};
+
+			var deleteButton = new Button { VerticalOptions = LayoutOptions.EndAndExpand,
+				Text = "Delete" };
 			deleteButton.Clicked += (sender, e) => {
 				App.Database.DeleteItem(question, setName);
 				this.Navigation.PopAsync();
 			};
 
 			Content = new StackLayout {
-				VerticalOptions = LayoutOptions.StartAndExpand,
 				Padding = new Thickness(20),
 				Children = {
 					questionLabel, questionEntry,
 					answerLabel, answerEntry,
-					saveButton, deleteButton
+					saveButton,
+					cancelButton,
+					deleteButton
 				}
 			};
 		}
