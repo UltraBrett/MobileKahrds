@@ -1,11 +1,8 @@
-﻿<Properties StartupItem="Droid\MobileKahrds.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\Views\SetPage.cs">
+﻿<Properties StartupItem="MobileKahrds/MobileKahrds.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds/ISQLite.cs">
     <Files>
-      <File FileName="MobileKahrds\Views\ItemCell.cs" Line="26" Column="4" />
-      <File FileName="MobileKahrds\Views\MainPage.cs" Line="1" Column="1" />
-      <File FileName="MobileKahrds\Views\SetPage.cs" Line="34" Column="4" />
-      <File FileName="MobileKahrds\Views\EditQuestionPage.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds/ISQLite.cs" Line="6" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
