@@ -7,8 +7,6 @@ namespace MobileKahrds
 	{
 		public NewQuestionPage ()
 		{
-			this.SetBinding (ContentPage.TitleProperty, "Name");
-
 			NavigationPage.SetHasNavigationBar (this, false);
 
 			var questionLabel = new Label { Text = "Question" };
@@ -22,14 +20,35 @@ namespace MobileKahrds
 			var saveButton = new Button { Text = "Save Question" };
 			saveButton.Clicked += (sender, e) => {
 				var setItem = (SetItem)BindingContext;
-				App.Database.NewItem(setItem);
-				this.Navigation.PopAsync();
+
+				int questionFlag = (setItem.Question.Length > 0) ? 0 : 1;
+				int answerFlag = (setItem.Answer.Length > 0) ? 0 : 1;
+
+				for(int i = 0; i < setItem.Question.Length; i++){
+					if(setItem.Question[i] == ' ' && questionFlag != 2)
+						questionFlag = 1;
+					if(setItem.Question[i] != ' ')
+						questionFlag = 2;
+				}
+
+				for(int i = 0; i < setItem.Answer.Length; i++){
+					if(setItem.Answer[i] == ' ' && answerFlag != 2)
+						answerFlag = 1;
+					if(setItem.Answer[i] != ' ')
+						answerFlag = 2;
+				}
+
+				if(questionFlag == 1 || answerFlag == 1){
+					DisplayAlert("You goofed!", "None of the fields can be empty.", "Ok");
+				} else {
+					App.Database.NewItem(setItem);
+					Navigation.PopAsync();
+				}
 			};
 
 			var cancelButton = new Button { Text = "Cancel" };
 			cancelButton.Clicked += (sender, e) => {
-				var set = (SetItem)BindingContext;
-				this.Navigation.PopAsync();
+				Navigation.PopAsync();
 			};
 
 			Content = new StackLayout {

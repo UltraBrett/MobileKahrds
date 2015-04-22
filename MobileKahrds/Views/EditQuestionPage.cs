@@ -24,20 +24,42 @@ namespace MobileKahrds
 			var saveButton = new Button { Text = "Save Question" };
 			saveButton.Clicked += (sender, e) => {
 				var editSetItem = (SetItem)BindingContext;
-				App.Database.SaveItem(editSetItem);
-				this.Navigation.PopAsync();
+
+				int questionFlag = (editSetItem.Question.Length > 0) ? 0 : 1;
+				int answerFlag = (editSetItem.Answer.Length > 0) ? 0 : 1;
+
+				for(int i = 0; i < editSetItem.Question.Length; i++){
+					if(editSetItem.Question[i] == ' ' && questionFlag != 2)
+						questionFlag = 1;
+					if(editSetItem.Question[i] != ' ')
+						questionFlag = 2;
+				}
+
+				for(int i = 0; i < editSetItem.Answer.Length; i++){
+					if(editSetItem.Answer[i] == ' ' && answerFlag != 2)
+						answerFlag = 1;
+					if(editSetItem.Answer[i] != ' ')
+						answerFlag = 2;
+				}
+
+				if(questionFlag == 1 || answerFlag == 1){
+					DisplayAlert("You goofed!", "None of the fields can be empty.", "Ok");
+				} else {
+					App.Database.SaveItem(editSetItem);
+					Navigation.PopAsync();
+				}
 			};
 
 			var cancelButton = new Button { Text = "Cancel" };
 			cancelButton.Clicked += (sender, e) => {
-				this.Navigation.PopAsync();
+				Navigation.PopAsync();
 			};
 
 			var deleteButton = new Button { VerticalOptions = LayoutOptions.EndAndExpand,
 				Text = "Delete" };
 			deleteButton.Clicked += (sender, e) => {
 				App.Database.DeleteItem(question, setName);
-				this.Navigation.PopAsync();
+				Navigation.PopAsync();
 			};
 
 			Content = new StackLayout {

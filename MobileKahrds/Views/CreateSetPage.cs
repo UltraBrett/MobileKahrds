@@ -7,8 +7,6 @@ namespace MobileKahrds
 	{
 		public CreateSetPage ()
 		{
-			this.SetBinding (ContentPage.TitleProperty, "Name");
-
 			NavigationPage.SetHasNavigationBar (this, false);
 
 			var setNameLabel = new Label { Text = "Set Name" };
@@ -18,14 +16,27 @@ namespace MobileKahrds
 			var saveButton = new Button { Text = "Save Set" };
 			saveButton.Clicked += (sender, e) => {
 				var setItem = (SetItem)BindingContext;
-				App.Database.NewItem(setItem);
-				this.Navigation.PopAsync();
+
+				int flag = (setItem.Set.Length > 0) ? 0 : 1;
+
+				for(int i = 0; i < setItem.Set.Length; i++){
+					if(setItem.Set[i] == ' ' && flag != 2)
+						flag = 1;
+					if(setItem.Set[i] != ' ')
+						flag = 2;
+				}
+
+				if(flag == 1){
+					DisplayAlert("You goofed!", "The field cannot be empty.", "Ok");
+				} else {
+					App.Database.NewItem(setItem);
+					Navigation.PopAsync();
+				}
 			};
 
 			var cancelButton = new Button { Text = "Cancel" };
 			cancelButton.Clicked += (sender, e) => {
-				var set = (SetItem)BindingContext;
-				this.Navigation.PopAsync();
+				Navigation.PopAsync();
 			};
 				
 			Content = new StackLayout {
