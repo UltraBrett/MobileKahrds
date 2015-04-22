@@ -18,7 +18,7 @@ namespace MobileKahrds
 			var saveButton = new Button { Text = "Save Set" };
 			saveButton.Clicked += (sender, e) => {
 				var setItem = (SetItem)BindingContext;
-				App.Database.SaveItem(setItem);
+				App.Database.NewItem(setItem);
 				this.Navigation.PopAsync();
 			};
 

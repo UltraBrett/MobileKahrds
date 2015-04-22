@@ -1,25 +1,31 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MobileKahrds
 {
 	public class GameSelectPage : CarouselPage
-	{
+	{		
+
+		SetItem setItem;
 		public GameSelectPage ()
 		{
-			this.Title = "Games";
+			Title = "Games";
 
-			this.ItemsSource = new Game[] 
+			ItemsSource = new [] 
 			{
-				new Game("Hangman", "defeatV2.jpg"),
-				new Game("Flash Kahrds", "flashkahrds.jpg"),
-				new Game("Kahrd Quiz", "idklol.jpg")
+				new Game("Hangman", "defeatV2.jpg", setItem.Set),
+				new Game("Flash Kahrds", "flashkahrds.jpg", setItem.Set),
+				new Game("Kahrd Quiz", "idklol.jpg", setItem.Set)
 			};
 
-			this.ItemTemplate = new DataTemplate(() =>
+			ItemTemplate = new DataTemplate(() =>
 			{
 				return new GamePage();
 			});
+		}
+
+		protected override void OnAppearing ()
+		{
+			setItem = (SetItem)BindingContext;
 		}
 	}
 }

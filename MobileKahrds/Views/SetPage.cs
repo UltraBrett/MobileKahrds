@@ -28,7 +28,11 @@ namespace MobileKahrds
 			Content = layout;
 
 			ToolbarItem tbi = new ToolbarItem ("play", "play", () => {
-				
+				var item = new SetItem();
+				item.Set = setItem.Set;
+				var page = new GameSelectPage();
+				page.BindingContext = item;
+				Navigation.PushAsync(page);
 			}, 0, 0);
 			ToolbarItems.Add (tbi);
 

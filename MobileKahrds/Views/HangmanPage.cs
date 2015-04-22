@@ -19,7 +19,7 @@ namespace MobileKahrds
 		}
 		protected override void OnAppearing ()
 		{
-			var setItem = (SetItem)BindingContext;
+			var setItem = (Game)BindingContext;
 			var kvSets = App.Database.GetSetItems(setItem.Set);
 			foreach (var kv in kvSets) {
 				length++;
