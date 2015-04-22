@@ -86,8 +86,14 @@ namespace MobileKahrds
 			hiddenAnswer = "";
 			for (int i = 0; i < hangman.termKey.Length; i++) {
 				// XD the best variable name
-				string lineOrNah = (hangman.termKey [i] != ' ') ? "__ " : "   ";
-				hiddenAnswer = hiddenAnswer + lineOrNah;
+				if (hangman.alphabet.Contains (hangman.termKey [i])) {
+					hiddenAnswer = hiddenAnswer + "__ ";
+				} else {
+					string lineOrNah = (hangman.termKey [i] == ' ') ? "__ " : hangman.termKey [i] + "  ";
+					hiddenAnswer = hiddenAnswer + lineOrNah;
+				}
+
+
 			}
 
 			hiddenAnswerLabel = new Label
@@ -388,7 +394,7 @@ namespace MobileKahrds
 		public bool checkForVictory(HangmanModel hangman){
 			char[] answer = hangman.termKey.ToCharArray();
 			for(int i = 0; i < answer.Length; i++){
-				if(!hangman.guessedChars.Contains(answer[i]) && answer[i] != ' '){
+				if(!hangman.guessedChars.Contains(answer[i]) && hangman.alphabet.Contains(answer[i])){
 					return false;
 				}
 			}
