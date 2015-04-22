@@ -30,7 +30,7 @@ namespace MobileKahrds
 				});
 			};
 
-			var b = new Button { Text = "Get SetList from Web" };
+			var b = new Button { Text = "List MySets from Web" };
 			b.Clicked += async (sender, e) => {
 				var sv = new KahrdsWebService();
 				var es = await sv.GetMyList();
@@ -40,7 +40,7 @@ namespace MobileKahrds
 				});
 			};
 
-			var c = new Button { Text = "Get ListofSets from Web" };
+			var c = new Button { Text = "Get one set from Web" };
 			c.Clicked += async (sender, e) => {
 				var setId = "5535ca1b1c006ab99f000006";
 				var sv = new KahrdsWebService();

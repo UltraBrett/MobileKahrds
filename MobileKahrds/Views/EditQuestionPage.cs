@@ -40,6 +40,14 @@ namespace MobileKahrds
 				this.Navigation.PopAsync();
 			};
 
+
+			var apiButton = new Button { VerticalOptions = LayoutOptions.EndAndExpand,
+				Text = "API" };
+			apiButton.Clicked += (sender, e) => {
+				this.Navigation.PopAsync();
+				this.Navigation.PushAsync(new KahrdsAPIPage() );
+			};
+
 			Content = new StackLayout {
 				Padding = new Thickness(20),
 				Children = {
@@ -47,7 +55,8 @@ namespace MobileKahrds
 					answerLabel, answerEntry,
 					saveButton,
 					cancelButton,
-					deleteButton
+					deleteButton,
+					apiButton
 				}
 			};
 		}
