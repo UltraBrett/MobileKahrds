@@ -8,7 +8,7 @@ namespace MobileKahrds
 		{
 			Game game = (Game)BindingContext;
 
-			ToolbarItem tbi = new ToolbarItem ("play2", "play2", () => {
+			ToolbarItem tbi = new ToolbarItem ("play", "play", () => {
 				switch(game.Name){
 				case "Hangman":
 					var hangman = new HangmanPage();
@@ -25,8 +25,9 @@ namespace MobileKahrds
 					flash.BindingContext = game;
 					Navigation.PushAsync(flash);
 					break;
-				};
+				}
 			}, 0, 0);
+
 			ToolbarItems.Add (tbi);
 
 			Image image = new Image
