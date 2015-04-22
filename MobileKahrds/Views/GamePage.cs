@@ -8,13 +8,7 @@ namespace MobileKahrds
 		{
 			Game game = (Game)BindingContext;
 
-			var playButton = new Button { 
-				Text = "Play!",
-				VerticalOptions = LayoutOptions.Center
-			};
-
-			//Play! button for each game page is set here
-			playButton.Clicked += (sender, e) => {
+			ToolbarItem tbi = new ToolbarItem ("play2", "play2", () => {
 				switch(game.Name){
 				case "Hangman":
 					var hangman = new HangmanPage();
@@ -32,8 +26,8 @@ namespace MobileKahrds
 					Navigation.PushAsync(flash);
 					break;
 				};
-
-			};
+			}, 0, 0);
+			ToolbarItems.Add (tbi);
 
 			Image image = new Image
 			{
@@ -54,8 +48,7 @@ namespace MobileKahrds
 				Children = 
 				{
 					bigLabel,
-					image,
-					playButton
+					image
 				}
 			};
 		}

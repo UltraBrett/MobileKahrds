@@ -52,6 +52,9 @@ Temporary Items
 *.dex
 *.jar
 *.userprefs
+*.stamp
+*.xml
+*.flag
 MobileKahrds/obj/Debug/android/bin/resources_and_assemblies
 MobileKahrds/obj/Debug/MobileKahrds.csprojResolveAssemblyReference.cache
 MobileKahrds/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
@@ -63,3 +66,4 @@ MobileKahrds/obj/Debug/res/layout/mykahrds.xml
 MobileKahrds/bin/Debug/Xamarin.Forms.Xaml.xml
 
 **/Debug/*
+**/Release/*

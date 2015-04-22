@@ -88,13 +88,16 @@ namespace MobileKahrds.Droid
 			public const int play = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int plus = 2130837517;
+			public const int play2 = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int three_penalties = 2130837518;
+			public const int plus = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int two_penalties = 2130837519;
+			public const int three_penalties = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int two_penalties = 2130837520;
 			
 			static Drawable()
 			{
