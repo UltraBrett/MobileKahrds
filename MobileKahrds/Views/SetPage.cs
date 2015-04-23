@@ -33,8 +33,8 @@ namespace MobileKahrds
 				foreach (var kv in kvSets) {
 					length++;
 				}
-				if(length <= 1){
-					DisplayAlert("You've made a huge mistake!", "Games require at least two items in a set to play.", "Ok");
+				if(length <= 4){
+					DisplayAlert("You've made a huge mistake!", "Games require at least five items in a set to play.", "Ok");
 				} else {				
 					var page = new GameSelectPage(setItem.Set);
 					Navigation.PushAsync(page);
