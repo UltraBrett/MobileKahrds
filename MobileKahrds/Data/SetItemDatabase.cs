@@ -16,6 +16,7 @@ namespace MobileKahrds
 			database = DependencyService.Get<ISQLite> ().GetConnection ();
 			// create the tables
 			database.CreateTable<SetItem>();
+			database.CreateTable<LoginInfo>();
 		}
 			
 		public IEnumerable<SetItem> GetSetNames ()
@@ -37,6 +38,13 @@ namespace MobileKahrds
 			lock (locker) {
 				return database.Query<SetItem>("SELECT [Answer] FROM [SetItem] WHERE [Set] = '" + setName
 					+ "' AND [Question] = '" + question + "'").ToArray();
+			}
+		}
+
+		public IEnumerable<LoginInfo> GetAccount ()
+		{
+			lock (locker) {
+				return database.Query<LoginInfo> ("SELECT * FROM [LoginInfo]").ToList ();
 			}
 		}
 
@@ -63,6 +71,21 @@ namespace MobileKahrds
 		{
 			lock (locker) {
 				database.Update(item);
+			}
+		}
+
+		public int NewAccount (LoginInfo info) 
+		{
+			lock (locker) {
+				return database.Insert(info);
+			}
+		}
+
+		public void UpdateAccount (LoginInfo info, string username) 
+		{
+			lock (locker) {
+				database.Query<LoginInfo> ("DELETE FROM [LoginInfo] WHERE [Username] = '" + username + "'");
+				database.Insert(info);
 			}
 		}
 

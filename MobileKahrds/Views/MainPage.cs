@@ -30,10 +30,10 @@ namespace MobileKahrds
 			ToolbarItems.Add (tbi);
 
 			tbi = new ToolbarItem ("+", "plus", () => {
-				var todoItem = new SetItem();
-				var todoPage = new CreateSetPage();
-				todoPage.BindingContext = todoItem;
-				Navigation.PushAsync(todoPage);
+				var item = new SetItem();
+				var page = new CreateSetPage();
+				page.BindingContext = item;
+				Navigation.PushAsync(page);
 			}, 0, 0);
 			ToolbarItems.Add (tbi);
 		}

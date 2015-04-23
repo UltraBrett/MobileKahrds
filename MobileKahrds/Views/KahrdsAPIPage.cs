@@ -17,6 +17,19 @@ namespace MobileKahrds
 			l.FontSize =  Device.GetNamedSize(NamedSize.Large, typeof(Label));
 			l.FontAttributes = FontAttributes.Bold;
 
+			ToolbarItem tbi = new ToolbarItem ("login", "login", () => {
+				var info = new LoginInfo();
+				var page = new LoginPage();
+				var account = App.Database.GetAccount();
+				foreach (var kv in account){
+					info.Username = kv.Username;
+					info.Password = kv.Password;
+				}
+				page.BindingContext = info;
+				Navigation.PushAsync(page);
+			}, 0, 0);
+			ToolbarItems.Add (tbi);
+
 			var a = new Button { Text = "Login  getSessionToken" };
 			a.Clicked += async (sender, e) => {
 				var sv = new KahrdsWebService();
