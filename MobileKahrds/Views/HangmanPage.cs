@@ -117,182 +117,182 @@ namespace MobileKahrds
 				HorizontalOptions = LayoutOptions.Center
 			};
 
-			var btnA = new Button { Text = "A", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnA = new Button { Text = "A", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnA.Clicked += (sender, e) => {
 				btnA.IsEnabled = false;
 				btnA.BackgroundColor = Color.Blue;
 				btnA.TextColor = Color.White;
 				inputChar('A');
 			};
-			var btnB = new Button { Text = "B", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnB = new Button { Text = "B", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnB.Clicked += (sender, e) => {
 				btnB.IsEnabled = false;
 				btnB.BackgroundColor = Color.Blue;
 				btnB.TextColor = Color.White;
 				inputChar('B');
 			};
-			var btnC = new Button { Text = "C", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnC = new Button { Text = "C", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnC.Clicked += (sender, e) => {
 				btnC.IsEnabled = false;
 				btnC.BackgroundColor = Color.Blue;
 				btnC.TextColor = Color.White;
 				inputChar('C');
 			};
-			var btnD = new Button { Text = "D", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnD = new Button { Text = "D", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnD.Clicked += (sender, e) => {
 				btnD.IsEnabled = false;
 				btnD.BackgroundColor = Color.Blue;
 				btnD.TextColor = Color.White;
 				inputChar('D');
 			};
-			var btnE = new Button { Text = "E", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnE = new Button { Text = "E", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnE.Clicked += (sender, e) => {
 				btnE.IsEnabled = false;
 				btnE.BackgroundColor = Color.Blue;
 				btnE.TextColor = Color.White;
 				inputChar('E');
 			};
-			var btnF = new Button { Text = "F", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnF = new Button { Text = "F", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnF.Clicked += (sender, e) => {
 				btnF.IsEnabled = false;
 				btnF.BackgroundColor = Color.Blue;
 				btnF.TextColor = Color.White;
 				inputChar('F');
 			};
-			var btnG = new Button { Text = "G", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnG = new Button { Text = "G", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnG.Clicked += (sender, e) => {
 				btnG.IsEnabled = false;
 				btnG.BackgroundColor = Color.Blue;
 				btnG.TextColor = Color.White;
 				inputChar('G');
 			};
-			var btnH = new Button { Text = "H", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnH = new Button { Text = "H", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnH.Clicked += (sender, e) => {
 				btnH.IsEnabled = false;
 				btnH.BackgroundColor = Color.Blue;
 				btnH.TextColor = Color.White;
 				inputChar('H');
 			};
-			var btnI = new Button { Text = "I", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnI = new Button { Text = "I", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnI.Clicked += (sender, e) => {
 				btnI.IsEnabled = false;
 				btnI.BackgroundColor = Color.Blue;
 				btnI.TextColor = Color.White;
 				inputChar('I');
 			};
-			var btnJ = new Button { Text = "J", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnJ = new Button { Text = "J", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnJ.Clicked += (sender, e) => {
 				btnJ.IsEnabled = false;
 				btnJ.BackgroundColor = Color.Blue;
 				btnJ.TextColor = Color.White;
 				inputChar('J');
 			};
-			var btnK = new Button { Text = "K", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnK = new Button { Text = "K", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnK.Clicked += (sender, e) => {
 				btnK.IsEnabled = false;
 				btnK.BackgroundColor = Color.Blue;
 				btnK.TextColor = Color.White;
 				inputChar('K');
 			};
-			var btnL = new Button { Text = "L", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnL = new Button { Text = "L", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnL.Clicked += (sender, e) => {
 				btnL.IsEnabled = false;
 				btnL.BackgroundColor = Color.Blue;
 				btnL.TextColor = Color.White;
 				inputChar('L');
 			};
-			var btnM = new Button { Text = "M", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnM = new Button { Text = "M", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnM.Clicked += (sender, e) => {
 				btnM.IsEnabled = false;
 				btnM.BackgroundColor = Color.Blue;
 				btnM.TextColor = Color.White;
 				inputChar('M');
 			};
-			var btnN = new Button { Text = "N", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnN = new Button { Text = "N", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnN.Clicked += (sender, e) => {
 				btnN.IsEnabled = false;
 				btnN.BackgroundColor = Color.Blue;
 				btnN.TextColor = Color.White;
 				inputChar('N');
 			};
-			var btnO = new Button { Text = "O", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnO = new Button { Text = "O", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnO.Clicked += (sender, e) => {
 				btnO.IsEnabled = false;
 				btnO.BackgroundColor = Color.Blue;
 				btnO.TextColor = Color.White;
 				inputChar('O');
 			};
-			var btnP = new Button { Text = "P", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnP = new Button { Text = "P", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnP.Clicked += (sender, e) => {
 				btnP.IsEnabled = false;
 				btnP.BackgroundColor = Color.Blue;
 				btnP.TextColor = Color.White;
 				inputChar('P');
 			};
-			var btnQ = new Button { Text = "Q", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnQ = new Button { Text = "Q", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnQ.Clicked += (sender, e) => {
 				btnQ.IsEnabled = false;
 				btnQ.BackgroundColor = Color.Blue;
 				btnQ.TextColor = Color.White;
 				inputChar('Q');
 			};
-			var btnR = new Button { Text = "R", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnR = new Button { Text = "R", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnR.Clicked += (sender, e) => {
 				btnR.IsEnabled = false;
 				btnR.BackgroundColor = Color.Blue;
 				btnR.TextColor = Color.White;
 				inputChar('R');
 			};
-			var btnS = new Button { Text = "S", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnS = new Button { Text = "S", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnS.Clicked += (sender, e) => {
 				btnS.IsEnabled = false;
 				btnS.BackgroundColor = Color.Blue;
 				btnS.TextColor = Color.White;
 				inputChar('S');
 			};
-			var btnT = new Button { Text = "T", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnT = new Button { Text = "T", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnT.Clicked += (sender, e) => {
 				btnT.IsEnabled = false;
 				btnT.BackgroundColor = Color.Blue;
 				btnT.TextColor = Color.White;
 				inputChar('T');
 			};
-			var btnU = new Button { Text = "U", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnU = new Button { Text = "U", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnU.Clicked += (sender, e) => {
 				btnU.IsEnabled = false;
 				btnU.BackgroundColor = Color.Blue;
 				btnU.TextColor = Color.White;
 				inputChar('U');
 			};
-			var btnV = new Button { Text = "V", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnV = new Button { Text = "V", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnV.Clicked += (sender, e) => {
 				btnV.IsEnabled = false;
 				btnV.BackgroundColor = Color.Blue;
 				btnV.TextColor = Color.White;
 				inputChar('V');
 			};
-			var btnW = new Button { Text = "W", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnW = new Button { Text = "W", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnW.Clicked += (sender, e) => {
 				btnW.IsEnabled = false;
 				btnW.BackgroundColor = Color.Blue;
 				btnW.TextColor = Color.White;
 				inputChar('W');
 			};
-			var btnX = new Button { Text = "X", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnX = new Button { Text = "X", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnX.Clicked += (sender, e) => {
 				btnX.IsEnabled = false;
 				btnX.BackgroundColor = Color.Blue;
 				btnX.TextColor = Color.White;
 				inputChar('X');
 			};
-			var btnY = new Button { Text = "Y", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnY = new Button { Text = "Y", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnY.Clicked += (sender, e) => {
 				btnY.IsEnabled = false;
 				btnY.BackgroundColor = Color.Blue;
 				btnY.TextColor = Color.White;
 				inputChar('Y');
 			};
-			var btnZ = new Button { Text = "Z", HeightRequest = 35, WidthRequest = 35, FontSize = 14 };
+			var btnZ = new Button { Text = "Z", HeightRequest = 35, WidthRequest = 35, FontSize = 12 };
 			btnZ.Clicked += (sender, e) => {
 				btnZ.IsEnabled = false;
 				btnZ.BackgroundColor = Color.Blue;
