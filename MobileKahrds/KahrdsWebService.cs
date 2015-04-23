@@ -25,14 +25,15 @@ namespace MobileKahrds
 			}
 		}
 
-		public async Task<String> AccountTest(string username, string password){
+		public async Task<String> AccountTest(string blackjack, string hookers){
 			var client = new HttpClient ();
 			client.BaseAddress = new Uri (BASEADDR);
-			string uri = String.Format("login?user={0}&passwd={1}&auth_token={2}", username, password, AUTH);
+			string uri = String.Format("login?user={0}&passwd={1}&auth_token={2}", blackjack, hookers, AUTH);
 			var response = await client.PostAsync (uri, new System.Net.Http.StringContent ("") );
 			var respStream = response.Content.ReadAsStreamAsync ().Result;
 			var reader = new StreamReader (respStream, Encoding.UTF8);
 			var sessionJson = reader.ReadToEnd ();
+
 			return sessionJson;
 		}
 
