@@ -37,10 +37,23 @@ namespace MobileKahrds
 			return sessionJson;
 		}
 
-		public async Task<String> GetSessionToken(){
+//		public async Task<String> GetSessionToken(){
+//			var client = new HttpClient ();
+//			client.BaseAddress = new Uri (BASEADDR);
+//			string uri = String.Format("login?user={0}&passwd={1}&auth_token={2}", USERNAME, PASSWD, AUTH);
+//			var response = await client.PostAsync (uri, new System.Net.Http.StringContent ("") );
+//			// asynchronously wait for response
+//			var respStream = response.Content.ReadAsStreamAsync ().Result;
+//			var reader = new StreamReader (respStream, Encoding.UTF8);
+//			var sessionJson = reader.ReadToEnd ();
+//
+//			return sessionJson;
+//		}
+
+		public async Task<String> GetSessionToken(string username, string password){
 			var client = new HttpClient ();
 			client.BaseAddress = new Uri (BASEADDR);
-			string uri = String.Format("login?user={0}&passwd={1}&auth_token={2}", USERNAME, PASSWD, AUTH);
+			string uri = String.Format("login?user={0}&passwd={1}&auth_token={2}", username, password, AUTH);
 			var response = await client.PostAsync (uri, new System.Net.Http.StringContent ("") );
 			// asynchronously wait for response
 			var respStream = response.Content.ReadAsStreamAsync ().Result;
@@ -49,7 +62,8 @@ namespace MobileKahrds
 
 			return sessionJson;
 		}
-			
+
+
 		public async Task<String> GetMyList(){
 			var client = new System.Net.Http.HttpClient ();
 			client.BaseAddress = new Uri (BASEADDR);

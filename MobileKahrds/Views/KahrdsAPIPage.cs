@@ -32,8 +32,15 @@ namespace MobileKahrds
 
 			var a = new Button { Text = "Login  getSessionToken" };
 			a.Clicked += async (sender, e) => {
+				var user = "";
+				var pass = "";
+				foreach (var kv in App.Database.GetAccount()){
+					user = kv.Username;
+					pass = kv.Password;
+				}
+
 				var sv = new KahrdsWebService();
-				var es = await sv.GetSessionToken();
+				var es = await sv.GetSessionToken(user, pass);
 				Xamarin.Forms.Device.BeginInvokeOnMainThread( () => {
 					Debug.WriteLine("response from Kahrds");
 					Debug.WriteLine(es);
