@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace MobileKahrds 
 {
@@ -20,7 +21,7 @@ namespace MobileKahrds
 			answerEntry.SetBinding (Entry.TextProperty, "Password");
 
 			var saveButton = new Button { Text = "Save Credentials" };
-			saveButton.Clicked += (sender, e) => {
+			saveButton.Clicked += async (sender, e) => {
 				var info = (LoginInfo)BindingContext;
 
 				int usernameFlag = (info.Username.Length > 0) ? 0 : 1;
@@ -41,14 +42,20 @@ namespace MobileKahrds
 				}
 
 				if(usernameFlag == 1 || passwordFlag == 1){
-					DisplayAlert("You goofed!", "None of the fields can be empty.", "Ok");
+					await DisplayAlert("You goofed!", "None of the fields can be empty.", "Ok");
 				} else {
-					if(username == null){
-						App.Database.NewAccount(info);
+					var sv = new KahrdsWebService();
+					var es = await sv.AccountTest(info.Username, info.Password);
+					if(!es.Contains("WRONG_PASSWORD")){
+						if(username == null){
+							App.Database.NewAccount(info);
+						} else {
+							App.Database.UpdateAccount(info, username);
+						}
+						await Navigation.PopAsync();
 					} else {
-						App.Database.UpdateAccount(info, username);
+						DisplayAlert("You goofed!", "Username/Password combination invalid.", "Ok");
 					}
-					Navigation.PopAsync();
 				}
 			};
 

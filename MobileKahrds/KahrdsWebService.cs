@@ -16,11 +16,16 @@ namespace MobileKahrds
 		private const string AUTH = "cac115357e04060e810b48ded2d115c067c85521";
 		private String SESSION = "bed30db943f7f6daf511206c1eae52164a84bdd07d12ef647210f4595757f2172b1220f91d85e0c469a20b485e87dec3d0e6075260a4c20acc484c42f3042bdc";
 
-
-		public KahrdsWebService ()
-		{
+		public async Task<String> AccountTest(string username, string password){
+			var client = new HttpClient ();
+			client.BaseAddress = new Uri (BASEADDR);
+			string uri = String.Format("login?user={0}&passwd={1}&auth_token={2}", username, password, AUTH);
+			var response = await client.PostAsync (uri, new System.Net.Http.StringContent ("") );
+			var respStream = response.Content.ReadAsStreamAsync ().Result;
+			var reader = new StreamReader (respStream, Encoding.UTF8);
+			var sessionJson = reader.ReadToEnd ();
+			return sessionJson;
 		}
-
 
 		public async Task<String> GetSessionToken(){
 			var client = new HttpClient ();
@@ -33,11 +38,8 @@ namespace MobileKahrds
 			var sessionJson = reader.ReadToEnd ();
 
 			return sessionJson;
-
 		}
-
-
-
+			
 		public async Task<String> GetMyList(){
 			var client = new System.Net.Http.HttpClient ();
 			client.BaseAddress = new Uri (BASEADDR);
@@ -47,7 +49,6 @@ namespace MobileKahrds
 			var respJson = response.Content.ReadAsStreamAsync ().Result;
 			var reader = new StreamReader (respJson, Encoding.UTF8);
 			return reader.ReadToEnd();
-
 		}
 
 
@@ -104,10 +105,6 @@ namespace MobileKahrds
 			var reader = new StreamReader (respJson, Encoding.UTF8);
 			return reader.ReadToEnd();
 		}
-
-
-
-
 	}
 }
 
