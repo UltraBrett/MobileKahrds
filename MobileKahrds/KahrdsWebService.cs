@@ -11,10 +11,19 @@ namespace MobileKahrds
 	public class KahrdsWebService
 	{
 		private const string BASEADDR = "http://www.kahrds.com/api/";
-		private const string USERNAME = "rlbilyeu3401@eagle.fgcu.edu";
-		private const string PASSWD = "zalewski";
+		private const string USERNAME = "";
+		private const string PASSWD = "";
 		private const string AUTH = "cac115357e04060e810b48ded2d115c067c85521";
 		private String SESSION = "bed30db943f7f6daf511206c1eae52164a84bdd07d12ef647210f4595757f2172b1220f91d85e0c469a20b485e87dec3d0e6075260a4c20acc484c42f3042bdc";
+
+
+		public KahrdsWebService(){
+			var account = App.Database.GetAccount();
+			foreach (var kv in account){
+				USERNAME = kv.Username;
+				PASSWD = kv.Password;
+			}
+		}
 
 		public async Task<String> AccountTest(string username, string password){
 			var client = new HttpClient ();

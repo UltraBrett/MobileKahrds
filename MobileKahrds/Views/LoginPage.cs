@@ -54,7 +54,7 @@ namespace MobileKahrds
 						}
 						await Navigation.PopAsync();
 					} else {
-						DisplayAlert("You goofed!", "Username/Password combination invalid.", "Ok");
+						await DisplayAlert("You goofed!", "Username/Password combination invalid.", "Ok");
 					}
 				}
 			};
