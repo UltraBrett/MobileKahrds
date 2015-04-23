@@ -65,7 +65,7 @@ namespace MobileKahrds
 			};
 
 			var logoutButton = new Button { VerticalOptions = LayoutOptions.EndAndExpand,
-				Text = "Logout" };
+				Text = "Remove Account" };
 			logoutButton.Clicked += (sender, e) => {
 				App.Database.Logout(username);
 				Navigation.PopAsync();
