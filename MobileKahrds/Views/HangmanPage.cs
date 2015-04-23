@@ -50,36 +50,50 @@ namespace MobileKahrds
 			image1 = new Image
 			{
 				Source = ImageSource.FromFile("game_start.jpg"),
+				WidthRequest = 250,
+				HeightRequest = 250
 			};
 			image2 = new Image
 			{
 				Source = ImageSource.FromFile("one_penalty.jpg"),
-				IsVisible = false
+				IsVisible = false,
+				WidthRequest = 250,
+				HeightRequest = 250
 			};
 			image3 = new Image
 			{
 				Source = ImageSource.FromFile("two_penalties.jpg"),
-				IsVisible = false
+				IsVisible = false,
+				WidthRequest = 250,
+				HeightRequest = 250
 			};
 			image4 = new Image
 			{
 				Source = ImageSource.FromFile("three_penalties.jpg"),
-				IsVisible = false
+				IsVisible = false,
+				WidthRequest = 250,
+				HeightRequest = 250
 			};
 			image5 = new Image
 			{
 				Source = ImageSource.FromFile("four_penalties.jpg"),
-				IsVisible = false
+				IsVisible = false,
+				WidthRequest = 250,
+				HeightRequest = 250
 			};
 			image6 = new Image
 			{
 				Source = ImageSource.FromFile("five_penalties.jpg"),
-				IsVisible = false
+				IsVisible = false,
+				WidthRequest = 250,
+				HeightRequest = 250
 			};
 			image7 = new Image
 			{
 				Source = ImageSource.FromFile("defeat.jpg"),
-				IsVisible = false
+				IsVisible = false,
+				WidthRequest = 250,
+				HeightRequest = 250
 			};
 
 
