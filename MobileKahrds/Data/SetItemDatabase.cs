@@ -103,6 +103,13 @@ namespace MobileKahrds
 				database.Query<SetItem> ("DELETE FROM [SetItem] WHERE [Set] = '" + setName + "'");
 			}
 		}
+
+		public void Logout(string username)
+		{
+			lock (locker) {
+				database.Query<SetItem> ("DELETE FROM [LoginInfo] WHERE [Username] = '" + username + "'");
+			}
+		}
 	}
 }
 

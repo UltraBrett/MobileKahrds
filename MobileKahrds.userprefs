@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Droid\MobileKahrds.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\Views\SetPage.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 7 (KitKat)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\Views\KahrdsAPIPage.cs">
     <Files>
-      <File FileName="MobileKahrds\Views\ItemCell.cs" Line="26" Column="4" />
-      <File FileName="MobileKahrds\Views\MainPage.cs" Line="1" Column="1" />
-      <File FileName="MobileKahrds\Views\SetPage.cs" Line="34" Column="4" />
-      <File FileName="MobileKahrds\Views\EditQuestionPage.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds\Views\LoginPage.cs" Line="13" Column="36" />
+      <File FileName="MobileKahrds\Data\SetItemDatabase.cs" Line="31" Column="17" />
+      <File FileName="MobileKahrds\Views\KahrdsAPIPage.cs" Line="124" Column="8" />
+      <File FileName="MobileKahrds\KahrdsWebService.cs" Line="15" Column="10" />
+      <File FileName="MobileKahrds\Views\HangmanPage.cs" Line="23" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

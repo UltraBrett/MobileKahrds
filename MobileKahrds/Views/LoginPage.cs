@@ -64,13 +64,21 @@ namespace MobileKahrds
 				Navigation.PopAsync();
 			};
 
+			var logoutButton = new Button { VerticalOptions = LayoutOptions.EndAndExpand,
+				Text = "Logout" };
+			logoutButton.Clicked += (sender, e) => {
+				App.Database.Logout(username);
+				Navigation.PopAsync();
+			};
+
 			Content = new StackLayout {
 				Padding = new Thickness(20),
 				Children = {
 					questionLabel, questionEntry,
 					answerLabel, answerEntry,
 					saveButton,
-					cancelButton
+					cancelButton,
+					logoutButton
 				}
 			};
 		}
