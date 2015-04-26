@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace MobileKahrds
 {
@@ -38,13 +39,23 @@ namespace MobileKahrds
 			cancelButton.Clicked += (sender, e) => {
 				Navigation.PopAsync();
 			};
+
+			var download = new Button { VerticalOptions = LayoutOptions.EndAndExpand,
+				Text = "Download a Personal Set" };
+			download.Clicked += async (sender, e) => {
+				var sv = new KahrdsWebService();
+				var es = await sv.GetMyList();
+				es = es.Substring(28, es.Length - 30);
+				var json = JsonConvert.DeserializeObject<DownloadSet> (es);
+				var test = json;
+			};
 				
 			Content = new StackLayout {
-				VerticalOptions = LayoutOptions.StartAndExpand,
 				Padding = new Thickness(20),
 				Children = {
 					setNameLabel, setNameEntry, 
-					saveButton, cancelButton
+					saveButton, cancelButton,
+					download
 				}
 			};
 		}
