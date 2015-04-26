@@ -12,8 +12,10 @@ namespace MobileKahrds
 			listView = new ListView ();
 			listView.ItemTemplate = new DataTemplate 
 				(typeof (DownloadSetCell));
-			listView.ItemSelected += (sender, e) => {
-				
+			listView.ItemSelected += async (sender, e) => {
+				var item = (Attributes) e.SelectedItem;
+				var sv = new KahrdsWebService();
+				var es = await sv.GetOneSetofKahrds(item.id);
 			};
 
 			var layout = new StackLayout();
