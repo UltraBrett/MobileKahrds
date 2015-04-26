@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace MobileKahrds
 {
-	public class KahrdList{
+	public class KahrdsList{
 		[JsonProperty("kahrd_set")]
 		public KahrdListData data { get; set; }
 	}
@@ -15,7 +15,7 @@ namespace MobileKahrds
 		[JsonProperty("name")]
 		public string name { get; set; }
 		[JsonProperty("public")]
-		public bool isPublic { get; set; }
+		public string isPublic { get; set; }
 		[JsonProperty("parent_category_name")]
 		public string parent_category_name { get; set; } 
 		[JsonProperty("category_name")]

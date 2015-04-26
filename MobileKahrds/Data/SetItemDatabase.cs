@@ -110,6 +110,16 @@ namespace MobileKahrds
 				database.Query<SetItem> ("DELETE FROM [LoginInfo] WHERE [Username] = '" + username + "'");
 			}
 		}
+
+		public void ImportDataSets(KahrdsList list){	
+			foreach (var val in list.data.list) {
+				var item = new SetItem ();
+				item.Set = list.data.name;
+				item.Question = val.definition;
+				item.Answer = val.word;
+				NewItem (item);
+			}
+		}
 	}
 }
 

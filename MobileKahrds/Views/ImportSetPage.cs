@@ -18,8 +18,9 @@ namespace MobileKahrds
 				var sv = new KahrdsWebService();
 				var es = await sv.GetOneSetofKahrds(item.id);
 				es = es.Substring(28, es.Length - 30);
-				var jsonObject = JsonConvert.DeserializeObject<KahrdList> (es);
-				var test = es;
+				var jsonObject = JsonConvert.DeserializeObject<KahrdsList> (es);
+				App.Database.ImportDataSets(jsonObject);
+				await DisplayAlert("Success!", "Set available to play.", "Ok");
 			};
 
 			var layout = new StackLayout();
