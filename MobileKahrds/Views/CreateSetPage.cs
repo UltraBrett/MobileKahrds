@@ -46,8 +46,10 @@ namespace MobileKahrds
 				var sv = new KahrdsWebService();
 				var es = await sv.GetMyList();
 				es = es.Substring(28, es.Length - 30);
-				var json = JsonConvert.DeserializeObject<DownloadSet> (es);
-				var test = json;
+				var jsonObject = JsonConvert.DeserializeObject<DownloadSet> (es);
+				var page = new ImportSetPage();
+				page.BindingContext = jsonObject;
+				Navigation.PushAsync(page);
 			};
 				
 			Content = new StackLayout {
