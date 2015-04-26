@@ -49,7 +49,7 @@ namespace MobileKahrds
 				var jsonObject = JsonConvert.DeserializeObject<DownloadSet> (es);
 				var page = new ImportSetPage();
 				page.BindingContext = jsonObject;
-				Navigation.PushAsync(page);
+				await Navigation.PushAsync(page);
 			};
 				
 			Content = new StackLayout {

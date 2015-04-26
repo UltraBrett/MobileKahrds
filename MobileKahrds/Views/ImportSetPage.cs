@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace MobileKahrds
 {
@@ -16,6 +17,9 @@ namespace MobileKahrds
 				var item = (Attributes) e.SelectedItem;
 				var sv = new KahrdsWebService();
 				var es = await sv.GetOneSetofKahrds(item.id);
+				es = es.Substring(28, es.Length - 30);
+				var jsonObject = JsonConvert.DeserializeObject<KahrdList> (es);
+				var test = es;
 			};
 
 			var layout = new StackLayout();
