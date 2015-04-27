@@ -25,7 +25,15 @@ namespace MobileKahrds
 			Content = layout;
 
 			ToolbarItem tbi = new ToolbarItem ("dots", "dots", () => {
-				Navigation.PushAsync(new KahrdsAPIPage());
+				var info = new LoginInfo();
+				var page = new LoginPage();
+				var account = App.Database.GetAccount();
+				foreach (var kv in account){
+					info.Username = kv.Username;
+					info.Password = kv.Password;
+				}
+				page.BindingContext = info;
+				Navigation.PushAsync(page);
 			}, 0, 1);
 			ToolbarItems.Add (tbi);
 
