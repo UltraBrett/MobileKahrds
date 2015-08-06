@@ -1,14 +1,16 @@
 ﻿<Properties StartupItem="Droid\MobileKahrds.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus S (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MobileKahrds\Views\MainPage.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Xamarin_Android_API_15" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid\SQLite_Android.cs">
     <Files>
-      <File FileName="MobileKahrds\Views\ImportSetPage.cs" Line="23" Column="68" />
-      <File FileName="MobileKahrds\Data\SetItemDatabase.cs" Line="110" Column="19" />
-      <File FileName="MobileKahrds\Views\SetPage.cs" Line="37" Column="111" />
-      <File FileName="MobileKahrds\Models\KahrdsList.cs" Line="10" Column="3" />
-      <File FileName="MobileKahrds\Views\KahrdsAPIPage.cs" Line="21" Column="5" />
-      <File FileName="MobileKahrds\KahrdsWebService.cs" Line="94" Column="38" />
+      <File FileName="MobileKahrds\Views\ImportSetPage.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds\Data\SetItemDatabase.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds\Views\SetPage.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds\Models\KahrdsList.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds\Views\KahrdsAPIPage.cs" Line="1" Column="1" />
+      <File FileName="MobileKahrds\KahrdsWebService.cs" Line="1" Column="1" />
       <File FileName="MobileKahrds\Views\MainPage.cs" Line="36" Column="32" />
+      <File FileName="MobileKahrds\ISQLite.cs" Line="2" Column="7" />
+      <File FileName="Droid\SQLite_Android.cs" Line="13" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

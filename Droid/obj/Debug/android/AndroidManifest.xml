@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="MobileKahrds.Droid">
   <uses-sdk android:minSdkVersion="15" />
   <application android:name="mono.android.app.Application" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/kahrdslogo" android:label="Mobile Kahrds" android:name="mobilekahrds.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/kahrdslogo" android:label="Mobile Kahrds" android:name="md592678e7272c260c9f8a316662ba2c4b8.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
